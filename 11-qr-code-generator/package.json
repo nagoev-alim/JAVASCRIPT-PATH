@@ -1,0 +1,23 @@
+{
+  "name": "javascript-path",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.6.1",
+    "@types/feather-icons": "^4.29.1",
+    "@types/toastify-js": "^1.12.0",
+    "feather-icons": "^4.29.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.6.0",
+    "toastify-js": "^1.12.0"
+  }
+}
