@@ -1,0 +1,84 @@
+/* ⛔️ Variables */
+:root {
+    --c-white: #fff;
+    --c-black: #000;
+}
+
+/* ⛔️ Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+html, body {
+    font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+#root,
+#app {
+    min-height: 100vh;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn, .button, button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    padding: 6px 14px;
+    border-radius: 4px;
+    background: transparent;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* ⛔️ Styles */
+#qrcode img {
+    max-width: 100%;
+    max-height: 320px;
+}
