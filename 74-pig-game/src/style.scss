@@ -1,0 +1,237 @@
+/* ⛔️ Variables */
+:root {
+  --c-white: #fff;
+  --c-black: #000;
+}
+
+/* ⛔️ Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+html, body {
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+#root,
+#app {
+  min-height: 100vh;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn, .button, button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background: transparent;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+svg {
+  pointer-events: none;
+}
+/* ⛔️ Styles */
+.root {
+  max-width: 800px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05), 0 25px 35px rgba(0, 0, 0, 0.03);
+  padding: 10px;
+  position: relative;
+  min-height: 370px;
+  overflow: hidden;
+
+  @media (min-width: 576px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: flex-start;
+  }
+
+  .overlay {
+    position: absolute;
+    background-color: #fff;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.25s ease;
+
+    &.visible {
+      visibility: visible;
+      pointer-events: auto;
+      opacity: 1;
+    }
+
+    button {
+      margin-top: auto;
+    }
+  }
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+.dice {
+  max-width: 90px;
+  margin-inline: auto;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+
+  @media (min-width: 576px) {
+    max-width: 120px;
+  }
+}
+
+.column {
+  padding: 10px;
+
+  &--player {
+    border: 3px solid rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    display: grid;
+    gap: 10px;
+    text-align: center;
+    transition: all 0.25s ease;
+
+    @media (min-width: 576px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+    }
+
+    .current {
+      padding: 20px 10px;
+      border: 3px solid rgba(0, 0, 0, 0.25);
+      background-color: #fff;
+      width: 100%;
+      display: grid;
+      gap: var(--gap);
+      border-radius: 10px;
+      margin-inline: auto;
+
+      @media (min-width: 576px) {
+        margin-top: auto;
+      }
+
+      &__label {
+        font-weight: 400;
+      }
+    }
+
+    &.active {
+      border-color: #ffb6b9;
+
+      .current {
+        border-color: #ffb6b9;
+      }
+    }
+
+    &.winner {
+      border-color: #9dd3a8;
+
+      .current {
+        border-color: #9dd3a8;
+      }
+    }
+  }
+
+  &--buttons {
+    display: grid;
+    gap: 10px;
+
+    @media (min-width: 576px) {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .buttons {
+      display: grid;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+}

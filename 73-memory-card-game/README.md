@@ -1,4 +1,4 @@
-## 📦  Component
+## 📦 Memory Games Component
 
 ### Обзор
 ### Описание кода: Класс `MemoryGame01`
