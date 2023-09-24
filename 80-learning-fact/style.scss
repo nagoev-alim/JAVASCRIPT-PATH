@@ -1,0 +1,252 @@
+@import "assets/scss/config/fonts";
+@import "assets/scss/config/reset";
+@import "assets/scss/config/vars";
+@import "assets/scss/config/utility";
+@import "assets/scss/modules/typography";
+@import "assets/scss/modules/fields";
+@import "assets/scss/modules/buttons";
+@import "assets/scss/modules/toast";
+@import "assets/scss/config/global";
+//@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Sono:wght@400;600&display=swap');
+
+
+body {
+  background-color: #292524;
+  color: #fafaf9;
+  font-family: "Sono", sans-serif;
+  padding: 48px 64px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* MAIN LAYOUT */
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 48px;
+}
+
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ELEMENTS */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo img {
+  width: 68px;
+  height: 68px;
+}
+
+h1 {
+  font-size: 42px;
+  text-transform: uppercase;
+  font-family: "Coiny", sans-serif;
+  line-height: 1;
+  margin-top: 6px;
+}
+
+.category {
+  margin-bottom: 16px;
+}
+
+.fact {
+  font-size: 20px;
+  line-height: 1.4;
+  background-color: #44403c;
+  margin-bottom: 16px;
+  padding: 16px 24px 16px 60px;
+  letter-spacing: -1px;
+  border-radius: 16px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+@media (max-width: 1200px) {
+  .fact {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
+}
+
+.tag {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: "Coiny", sans-serif;
+  padding-top: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 100px;
+}
+
+.vote-buttons {
+  margin-left: auto;
+  flex-shrink: 0;
+
+  display: flex;
+  gap: 8px;
+}
+
+.vote-buttons button {
+  border: none;
+  background-color: #78716c;
+  font-size: 18px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  color: inherit;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.vote-buttons button:hover {
+  background-color: #292524;
+}
+
+ul {
+  list-style: none;
+}
+
+.source:link,
+.source:visited {
+  color: #a8a29e;
+  text-decoration: none;
+  margin-left: 12px;
+  transition: 0.3s;
+}
+
+.source:hover,
+.source:active {
+  color: #3b82f6;
+}
+
+.btn {
+  border: none;
+  font-family: "Coiny", sans-serif;
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: 17px;
+  padding: 16px 0 13px;
+  background-image: linear-gradient(135deg, #3b82f6, #ef4444, #16a34a, #eab308);
+  color: inherit;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(110%) rotate(-2deg);
+}
+
+.btn-large {
+  font-size: 20px;
+  padding: 20px 32px 17px;
+}
+
+.btn-all-categories {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.btn-category {
+  width: 100%;
+  background-image: none;
+}
+
+/* FORM */
+.fact-form {
+  background-color: #44403c;
+  margin-bottom: 40px;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 16px;
+}
+
+.fact-form input,
+.fact-form select {
+  width: 220px;
+  background-color: #78716c;
+  border: none;
+  border-radius: 100px;
+  padding: 16px;
+  font-size: 18px;
+  color: inherit;
+  font-family: inherit;
+}
+
+.fact-form input::placeholder {
+  color: #a8a29e;
+}
+
+.fact-form input:first-child {
+  flex-grow: 1;
+}
+
+.fact-form span {
+  font-weight: 600;
+  font-size: 18px;
+  margin-right: 18px;
+}
+
+@media (max-width: 1000px) {
+  body {
+    padding: 32px 48px;
+  }
+
+  .fact-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .fact-form input,
+  .fact-form select {
+    width: auto;
+  }
+}
+
+
+.trash {
+  background-color: transparent;
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  padding: 4px;
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+  }
+
+  svg {
+    pointer-events: none;
+  }
+}

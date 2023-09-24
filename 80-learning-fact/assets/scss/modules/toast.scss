@@ -1,0 +1,63 @@
+
+.notification {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 16px;
+  position: fixed;
+  bottom: 30px;
+  min-width: 500px;
+  max-width: 500px;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid transparent;
+  z-index: 100;
+
+  &.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  &.danger {
+    border-color: #fc8181;
+    background-color: #fff5f5;
+    color: #c53030;
+  }
+
+  &.warning {
+    border-color: #ed8936;
+    background-color: #fffaf0;
+    color: #c05621;
+  }
+
+  &.success {
+    border-color: #38b2ac;
+    background-color: #e6fffa;
+    color: #234e52;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
