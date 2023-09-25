@@ -1,0 +1,19 @@
+body {
+  font-size: var(--h6);
+  font-family: var(--font-sans);
+  line-height: var(--lh-min-third);
+  font-weight: var(--fw-400);
+  color: var(--bcp-grey);
+
+  @media (min-width: 1200px) {
+    line-height: var(--lh-max-third);
+  }
+}
+
+#app {
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  min-height: 100vh;
+}

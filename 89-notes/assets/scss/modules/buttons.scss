@@ -1,0 +1,23 @@
+button, .button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  transition: var(--ease-1);
+  padding: 10px 16px;
+  border: 1px solid rgba(32, 72, 79, 0.1);
+  background-color: var(--bg, #fff);
+  border-radius: 8px;
+
+  &:is(:hover,:focus) {
+    background-color: var(--bcs-grey-4);
+  }
+  &:disabled {
+    background-color: var(--bcs-grey-2);
+    cursor: default;
+    opacity: 0.4;
+    user-select: none;
+    pointer-events: none;
+  }
+}
