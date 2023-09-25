@@ -1,0 +1,98 @@
+:root {
+  --fld-bg-light: #F8FAFC;
+  --fld-c-secondary: #B8BCCA;
+  --fld-c-primary: #3B4256;
+  --fld-c-error: #ED0131;
+  --fld-c-success: #0E6245;
+  --fld-c-focus: #0048D9;
+  --fld-bdrs: 4px;
+  --fld-l-light: #6F7482;
+  --fld-chbx-bg: #3B4256;
+  --fld-chbx-bdrs: 3px;
+}
+
+label, .label {
+  color: var(--fld-l-light);
+  cursor: pointer;
+}
+
+label {
+  display: grid;
+  gap: 5px;
+}
+
+input:not([type="checkbox"],[type="radio"], .visually-hidden), .input,
+textarea, .textarea,
+select, .select {
+  padding: 12px;
+  background-color: var(--fld-bg-light);
+  border-radius: var(--fld-bdrs);
+  color: var(--fld-c-primary);
+  border: 1px solid var(--fld-c-primary);
+
+  &:focus {
+    border-color: var(--fld-c-focus);
+  }
+
+  &:disabled {
+    color: var(--fld-c-secondary);
+  }
+
+  &::placeholder {
+    color: var(--fld-c-secondary);
+  }
+
+  &.error {
+    border-color: var(--fld-c-error);
+  }
+
+  &.success {
+    border-color: var(--fld-c-success);
+  }
+}
+
+textarea, .textarea {
+  min-height: 140px;
+}
+
+.checkbox,
+.radio {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid var(--fld-chbx-bg);
+  border-radius: var(--fld-chbx-bdrs);
+  flex-shrink: 0;
+}
+
+.radio {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  outline: 3px solid var(--fld-chbx-bg);
+  border: 3px solid #fff;
+  background: #fff;
+}
+
+input[type="checkbox"]:checked + .checkbox {
+  background-color: var(--fld-chbx-bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' %3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+  background-position: center;
+}
+
+input[type="radio"]:checked + .radio {
+  background: var(--fld-chbx-bg);
+  border-color: #FFF;
+  outline-color: var(--fld-chbx-bg);
+}
+
+input[type="checkbox"]:focus-within + .checkbox {
+  outline: 3px solid #E2E7ED;
+}
+
+form, .form {
+  display: grid;
+  text-align: left;
+}

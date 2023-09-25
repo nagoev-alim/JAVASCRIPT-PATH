@@ -1,0 +1,331 @@
+:root {
+  /* Colors */
+  --bcp-blue: #443DF6;
+  --bcp-grey: #1B2124;
+  --bcp-black: #000000;
+  --bcs-grey-1: #8D9091;
+  --bcs-grey-2: #CCCCCC;
+  --bcs-grey-3: #EFEFEF;
+  --bcs-grey-4: #FBFBFB;
+  --bct-navy: #191489;
+  --bct-red: #C5292A;
+  --bct-sunny: #FFD965;
+  --bct-marina: #A6D4FF;
+  --bct-green: #22B02E;
+
+  /* Viewport */
+  --maximumViewportWidth: 1240;
+
+  /* Font Family */
+  --font-sans: 'Poppins', 'Work Sans', 'Quicksand', 'DM Sans', 'IBM Plex Sans', 'Rubik', "Google Sans", system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue;
+  --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: Consolas, Menlo, Monaco, "Liberation Mono", monospace;
+  // 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'; // 'Poppins'
+  // 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap'; // 'Work Sans'
+  // 'https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap'; // 'Quicksand'
+  // 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap'; // 'DM Sans'
+  // 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap'; // 'IBM Plex Sans'
+  // 'https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap'; // 'Rubik'
+
+  /* Font Size */
+  // https://utopia.fyi/type/calculator
+  --h1: clamp(2.49rem, calc(2.29rem + 0.98vw), 3.05rem); // 39.81 -> 48.83
+  --h2: clamp(2.07rem, calc(1.95rem + 0.64vw), 2.44rem); // 33.18	-> 39.06
+  --h3: clamp(1.73rem, calc(1.65rem + 0.39vw), 1.95rem); // 27.65	-> 31.25
+  --h4: clamp(1.44rem, calc(1.40rem + 0.21vw), 1.56rem); // 23.04	-> 25.00
+  --h5: clamp(1.20rem, calc(1.18rem + 0.09vw), 1.25rem); // 19.20	-> 20.00
+  --h6: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem); // 16
+  --h7: clamp(0.64rem, calc(0.71rem + -0.09vw), 0.69rem); // 11.11	-> 10.24
+  --h8: clamp(0.80rem, calc(0.84rem + -0.06vw), 0.83rem); // 13.33	-> 12.80
+
+  /* Font Weights */
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+  --fw-900: 900;
+
+  /* Line Height */
+  --lh-min-second: 1.067;
+  --lh-max-second: 1.125;
+  --lh-min-third: 1.2;
+  --lh-max-third: 1.25;
+  --lh-min-fourth: 1.333;
+  --lh-max-fourth: 1.414;
+  --lh-min-five: 1.5;
+  --lh-max-five: 1.618;
+
+  /* Shadows */
+  --shadow-color: 220 3% 15%;
+  --shadow-strength: 1%;
+  --shadow-1: 0 1px 2px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+  --shadow-2: 0 3px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+  0 7px 14px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%));
+  --shadow-3: 0 -1px 3px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+  0 1px 2px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+  0 2px 5px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+  0 4px 12px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+  0 12px 15px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+  --shadow-4: 0 -2px 5px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+  0 1px 1px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+  0 2px 2px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+  0 5px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+  0 9px 9px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+  0 16px 16px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 6%));
+  --shadow-5: 0 -1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+  0 2px 1px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+  0 5px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+  0 10px 10px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+  0 20px 20px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+  0 40px 40px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+  --shadow-6: 0 -1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+  0 3px 2px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+  0 7px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)),
+  0 12px 10px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+  0 22px 18px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+  0 41px 33px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 6%)),
+  0 100px 80px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+  --inner-shadow-0: inset 0 0 0 1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+  --inner-shadow-1: inset 0 1px 2px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+  --inner-shadow-2: inset 0 1px 4px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+  --inner-shadow-3: inset 0 2px 8px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+  --inner-shadow-4: inset 0 2px 14px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+
+  /* Animation */
+  --ease-1: cubic-bezier(.25, 0, .5, 1);
+  --ease-2: cubic-bezier(.25, 0, .4, 1);
+  --ease-3: cubic-bezier(.25, 0, .3, 1);
+  --ease-4: cubic-bezier(.25, 0, .2, 1);
+  --ease-5: cubic-bezier(.25, 0, .1, 1);
+  --ease-in-1: cubic-bezier(.25, 0, 1, 1);
+  --ease-in-2: cubic-bezier(.50, 0, 1, 1);
+  --ease-in-3: cubic-bezier(.70, 0, 1, 1);
+  --ease-in-4: cubic-bezier(.90, 0, 1, 1);
+  --ease-in-5: cubic-bezier(1, 0, 1, 1);
+  --ease-out-1: cubic-bezier(0, 0, .75, 1);
+  --ease-out-2: cubic-bezier(0, 0, .50, 1);
+  --ease-out-3: cubic-bezier(0, 0, .3, 1);
+  --ease-out-4: cubic-bezier(0, 0, .1, 1);
+  --ease-out-5: cubic-bezier(0, 0, 0, 1);
+  --ease-in-out-1: cubic-bezier(.1, 0, .9, 1);
+  --ease-in-out-2: cubic-bezier(.3, 0, .7, 1);
+  --ease-in-out-3: cubic-bezier(.5, 0, .5, 1);
+  --ease-in-out-4: cubic-bezier(.7, 0, .3, 1);
+  --ease-in-out-5: cubic-bezier(.9, 0, .1, 1);
+  --ease-elastic-1: cubic-bezier(.5, .75, .75, 1.25);
+  --ease-elastic-2: cubic-bezier(.5, 1, .75, 1.25);
+  --ease-elastic-3: cubic-bezier(.5, 1.25, .75, 1.25);
+  --ease-elastic-4: cubic-bezier(.5, 1.5, .75, 1.25);
+  --ease-elastic-5: cubic-bezier(.5, 1.75, .75, 1.25);
+  --ease-squish-1: cubic-bezier(.5, -.1, .1, 1.5);
+  --ease-squish-2: cubic-bezier(.5, -.3, .1, 1.5);
+  --ease-squish-3: cubic-bezier(.5, -.5, .1, 1.5);
+  --ease-squish-4: cubic-bezier(.5, -.7, .1, 1.5);
+  --ease-squish-5: cubic-bezier(.5, -.9, .1, 1.5);
+  --ease-step-1: steps(2);
+  --ease-step-2: steps(3);
+  --ease-step-3: steps(4);
+  --ease-step-4: steps(7);
+  --ease-step-5: steps(10);
+  --animation-fade-in: fade-in .5s var(--ease-3);
+  --animation-fade-in-bloom: fade-in-bloom 2s var(--ease-3);
+  --animation-fade-out: fade-out .5s var(--ease-3);
+  --animation-fade-out-bloom: fade-out-bloom 2s var(--ease-3);
+  --animation-scale-up: scale-up .5s var(--ease-3);
+  --animation-scale-down: scale-down .5s var(--ease-3);
+  --animation-slide-out-up: slide-out-up .5s var(--ease-3);
+  --animation-slide-out-down: slide-out-down .5s var(--ease-3);
+  --animation-slide-out-right: slide-out-right .5s var(--ease-3);
+  --animation-slide-out-left: slide-out-left .5s var(--ease-3);
+  --animation-slide-in-up: slide-in-up .5s var(--ease-3);
+  --animation-slide-in-down: slide-in-down .5s var(--ease-3);
+  --animation-slide-in-right: slide-in-right .5s var(--ease-3);
+  --animation-slide-in-left: slide-in-left .5s var(--ease-3);
+  --animation-shake-x: shake-x .75s var(--ease-out-5);
+  --animation-shake-y: shake-y .75s var(--ease-out-5);
+  --animation-spin: spin 2s linear infinite;
+  --animation-ping: ping 5s var(--ease-out-3) infinite;
+  --animation-blink: blink 1s var(--ease-out-3) infinite;
+  --animation-float: float 3s var(--ease-in-out-3) infinite;
+  --animation-bounce: bounce 2s var(--ease-squish-2) infinite;
+  --animation-pulse: pulse 2s var(--ease-out-3) infinite;
+
+  @keyframes fade-in {
+    to {
+      opacity: 1
+    }
+  }
+  @keyframes fade-in-bloom {
+    0% {
+      opacity: 0;
+      filter: brightness(1) blur(20px)
+    }
+    10% {
+      opacity: 1;
+      filter: brightness(2) blur(10px)
+    }
+    100% {
+      opacity: 1;
+      filter: brightness(1) blur(0)
+    }
+  }
+  @keyframes fade-out {
+    to {
+      opacity: 0
+    }
+  }
+  @keyframes fade-out-bloom {
+    100% {
+      opacity: 0;
+      filter: brightness(1) blur(20px)
+    }
+    10% {
+      opacity: 1;
+      filter: brightness(2) blur(10px)
+    }
+    0% {
+      opacity: 1;
+      filter: brightness(1) blur(0)
+    }
+  }
+  @keyframes scale-up {
+    to {
+      transform: scale(1.25)
+    }
+  }
+  @keyframes scale-down {
+    to {
+      transform: scale(.75)
+    }
+  }
+  @keyframes slide-out-up {
+    to {
+      transform: translateY(-100%)
+    }
+  }
+  @keyframes slide-out-down {
+    to {
+      transform: translateY(100%)
+    }
+  }
+  @keyframes slide-out-right {
+    to {
+      transform: translateX(100%)
+    }
+  }
+  @keyframes slide-out-left {
+    to {
+      transform: translateX(-100%)
+    }
+  }
+  @keyframes slide-in-up {
+    from {
+      transform: translateY(100%)
+    }
+  }
+  @keyframes slide-in-down {
+    from {
+      transform: translateY(-100%)
+    }
+  }
+  @keyframes slide-in-right {
+    from {
+      transform: translateX(-100%)
+    }
+  }
+  @keyframes slide-in-left {
+    from {
+      transform: translateX(100%)
+    }
+  }
+  @keyframes shake-x {
+    0%, 100% {
+      transform: translateX(0%)
+    }
+    20% {
+      transform: translateX(-5%)
+    }
+    40% {
+      transform: translateX(5%)
+    }
+    60% {
+      transform: translateX(-5%)
+    }
+    80% {
+      transform: translateX(5%)
+    }
+  }
+  @keyframes shake-y {
+    0%, 100% {
+      transform: translateY(0%)
+    }
+    20% {
+      transform: translateY(-5%)
+    }
+    40% {
+      transform: translateY(5%)
+    }
+    60% {
+      transform: translateY(-5%)
+    }
+    80% {
+      transform: translateY(5%)
+    }
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(1turn)
+    }
+  }
+  @keyframes ping {
+    90%, 100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1
+    }
+    50% {
+      opacity: .5
+    }
+  }
+  @keyframes float {
+    50% {
+      transform: translateY(-25%)
+    }
+  }
+  @keyframes bounce {
+    25% {
+      transform: translateY(-20%)
+    }
+    40% {
+      transform: translateY(-3%)
+    }
+    0%, 60%, 100% {
+      transform: translateY(0)
+    }
+  }
+  @keyframes pulse {
+    50% {
+      transform: scale(.9, .9)
+    }
+  }
+
+  /* Aspect Ratio */
+  --ratio-square: 1;
+  --ratio-landscape: 4/3;
+  --ratio-portrait: 3/4;
+  --ratio-widescreen: 16/9;
+  --ratio-ultrawide: 18/5;
+  --ratio-golden: 1.6180/1;
+
+  /* Border */
+  --radius-round: 50%;
+
+  /* Icons */
+  --fa: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css';
+}
