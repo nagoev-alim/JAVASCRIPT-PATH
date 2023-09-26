@@ -8,9 +8,9 @@ import confetti from 'canvas-confetti';
  * Класс GuessNumber представляет игру "Угадай число".
  */
 class GuessNumber {
-  private form: HTMLFormElement | null = null;
-  private input: HTMLInputElement | null = null;
-  private output: HTMLUListElement | null = null;
+  private form: HTMLFormElement;
+  private input: HTMLInputElement;
+  private output: HTMLUListElement;
   private username: string = '';
   private attemptsQuantity: number = 0;
   private secret: number = getRandomNumber(1, 100);
@@ -25,7 +25,7 @@ class GuessNumber {
   /**
    * Инициализирует игру, создавая DOM-элементы и устанавливая обработчики событий.
    */
-  private initialize():void {
+  private initialize(): void {
     this.createDOM();
     this.setupEventListeners();
   }
@@ -33,8 +33,8 @@ class GuessNumber {
   /**
    * Создает DOM-элементы для игры.
    */
-  private createDOM():void {
-    const root:HTMLDivElement = document.querySelector('#app')!;
+  private createDOM(): void {
+    const root: HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
 
     root.innerHTML = `
@@ -48,18 +48,18 @@ class GuessNumber {
         </form>
       </div>
     `;
-    this.form = root.querySelector<HTMLFormElement>('[data-form]');
-    this.input = root.querySelector<HTMLInputElement>('[data-input]');
-    this.output = root.querySelector<HTMLUListElement>('[data-output]');
+    this.form = root.querySelector('[data-form]')!;
+    this.input = root.querySelector('[data-input]')!;
+    this.output = root.querySelector('[data-output]')!;
   }
 
   /**
    * Устанавливает обработчики событий для ввода и формы.
    */
   private setupEventListeners(): void {
-    this.input?.focus();
+    this.input.focus();
     this.showMessage('👨 Введите ваше имя:');
-    this.form?.addEventListener('submit', this.handleSubmit.bind(this));
+    this.form.addEventListener('submit', this.handleSubmit.bind(this));
     console.log(`Загаданное число: ${this.secret}`);
   }
 
@@ -67,17 +67,17 @@ class GuessNumber {
    * Отображает сообщение в интерфейсе.
    * @param {string} message - Сообщение для отображения.
    */
-  private showMessage(message: string) {
+  private showMessage(message: string):void {
     const li = document.createElement('li');
     li.classList.add('text-xl');
     li.innerHTML = message;
-    this.output?.appendChild(li);
+    this.output.appendChild(li);
   }
 
   /**
    * Обрабатывает случай, когда введенное значение недопустимо.
    */
-  private handleInvalidInput() {
+  private handleInvalidInput():void {
     Toastify({
       text: '⛔️ Пожалуйста, заполните поле',
       className: 'bg-none shadow-none bg-orange-100 text-black border border-orange-200',
@@ -91,7 +91,7 @@ class GuessNumber {
    * Обрабатывает отправку формы.
    * @param {Event} event - Событие отправки формы.
    */
-  private handleSubmit(event: Event) {
+  private handleSubmit(event: Event):void {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const value = form.guess.value.trim();
