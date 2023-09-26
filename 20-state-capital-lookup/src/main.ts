@@ -39,7 +39,7 @@ class StateCapitalLookup {
    * - Создает DOM элементы.
    * - Назначает обработчики событий.
    */
-  private initialize():void {
+  private initialize(): void {
     this.createDOM();
     this.setupEventListeners();
   }
@@ -47,8 +47,8 @@ class StateCapitalLookup {
   /**
    * Создает DOM элементы и добавляет их на страницу.
    */
-  private createDOM():void {
-    const root:HTMLDivElement = document.querySelector('#app')!;
+  private createDOM(): void {
+    const root: HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
 
     root.innerHTML = `
@@ -73,7 +73,7 @@ class StateCapitalLookup {
    * Обработчик события ввода, который выполняет поиск и отображение результатов.
    * @param event Событие ввода
    */
-  private async handleChange(event: Event) {
+  private async handleChange(event: Event): Promise<void> {
     const target = event.target as HTMLInputElement;
     let matches = states.filter(({ name, abbr }: { name: string, abbr: string }) => {
       const regex = new RegExp(`^${target.value.toLowerCase()}`, 'gi');
