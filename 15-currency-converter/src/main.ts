@@ -28,7 +28,7 @@ class CurrencyConverter {
   }
 
   // Метод инициализации
-  private initialize() {
+  private initialize():void {
     this.createDOM(); // Создание структуры DOM
     this.setupEventListeners(); // Настройка обработчиков событий
   }

@@ -49,7 +49,7 @@ class RockPaperScissors {
   /**
    * Инициализирует компонент, создавая DOM-элементы и устанавливая обработчики событий.
    */
-  private initialize() {
+  private initialize():void {
     this.createDOM();
     this.setupEventListeners();
   }

@@ -43,7 +43,7 @@ class Pokedex {
    * Инициализирует приложение, создавая DOM-элементы и устанавливая обработчики событий.
    * @private
    */
-  private initialize() {
+  private initialize():void {
     this.createDOM();
     this.setupEventListeners();
   }

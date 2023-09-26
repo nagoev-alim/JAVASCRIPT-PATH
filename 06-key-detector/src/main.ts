@@ -3,23 +3,23 @@ import './style.css';
 
 // Создаем класс KeyDetector для обработки событий клавиатуры
 class KeyDetector {
-  private keyElements: NodeListOf<HTMLSpanElement> | null = null; // Список элементов для отображения клавиши
-  private keyCodeElements: NodeListOf<HTMLSpanElement> | null = null; // Список элементов для отображения кода клавиши
-  private preview: HTMLParagraphElement | null = null; // Элемент для предварительного отображения текста
-  private container: HTMLDivElement | null = null; // Контейнер для скрытия/отображения элементов
+  private keyElements: NodeListOf<HTMLSpanElement>; // Список элементов для отображения клавиши
+  private keyCodeElements: NodeListOf<HTMLSpanElement>; // Список элементов для отображения кода клавиши
+  private preview: HTMLParagraphElement; // Элемент для предварительного отображения текста
+  private container: HTMLDivElement; // Контейнер для скрытия/отображения элементов
 
   constructor() {
     this.initialize(); // Вызываем метод инициализации
   }
 
-  private initialize() {
+  private initialize(): void {
     this.createDOM(); // Создаем структуру DOM
     this.setupEventListeners(); // Устанавливаем обработчики событий
   }
 
-  private createDOM():void {
+  private createDOM(): void {
     // Получаем корневой элемент с id "app"
-    const root:HTMLDivElement = document.querySelector('#app')!;
+    const root: HTMLDivElement = document.querySelector('#app')!;
     if (!root) return; // Если элемент не найден, выходим из метода
 
     // Создаем структуру DOM для отображения информации о нажатой клавише
@@ -42,20 +42,19 @@ class KeyDetector {
     // Находим необходимые элементы DOM и сохраняем их в соответствующих свойствах
     this.keyElements = document.querySelectorAll('[data-value="key"]') as NodeListOf<HTMLSpanElement>;
     this.keyCodeElements = document.querySelectorAll('[data-value="keyCode"]') as NodeListOf<HTMLSpanElement>;
-    this.preview = document.querySelector<HTMLParagraphElement>('[data-preview]');
-    this.container = document.querySelector<HTMLDivElement>('[data-container]');
+    this.preview = document.querySelector('[data-preview]')!;
+    this.container = document.querySelector('[data-container]')!;
   }
 
   private setupEventListeners(): void {
     // Устанавливаем обработчик события "keydown" для окна браузера
-    window.addEventListener('keydown', ({ key, keyCode }) => {
+    window.addEventListener('keydown', ({ key, keyCode }): void => {
       // Скрываем предварительное сообщение и отображаем контейнер
-      this.preview?.classList.add('hidden');
-      this.container?.classList.remove('hidden');
-
+      this.preview.classList.add('hidden');
+      this.container.classList.remove('hidden');
       // Обновляем текст в элементах для отображения клавиши и кода клавиши
-      this.keyElements?.forEach(k => k.textContent = key === ' ' ? 'Space' : key);
-      this.keyCodeElements?.forEach(k => k.textContent = keyCode.toString());
+      this.keyElements.forEach(k => k.textContent = key === ' ' ? 'Space' : key);
+      this.keyCodeElements.forEach(k => k.textContent = keyCode.toString());
     });
   }
 }

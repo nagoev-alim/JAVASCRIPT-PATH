@@ -42,7 +42,7 @@ class QRCodeGenerator {
    * Инициализирует объект QRCodeGenerator.
    * Вызывает методы createDOM() и setupEventListeners() для настройки интерфейса и обработки событий.
    */
-  private initialize() {
+  private initialize():void {
     this.createDOM();
     this.setupEventListeners();
   }

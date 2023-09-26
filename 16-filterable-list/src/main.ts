@@ -19,7 +19,7 @@ class FilterableList {
   /**
    * Инициализирует компонент, создавая DOM-элементы и настраивая обработчики событий.
    */
-  private initialize() {
+  private initialize():void {
     this.createDOM();
     this.setupEventListeners();
   }

@@ -39,7 +39,7 @@ class AnimeTracker {
    * Создает DOM-элементы, устанавливает слушатели событий.
    * @private
    */
-  private initialize() {
+  private initialize():void {
     this.createDOM();
     this.setupEventListeners();
   }

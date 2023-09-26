@@ -22,7 +22,7 @@ class QRCodeGenerator {
   /**
    * Инициализирует элементы DOM и устанавливает обработчики событий.
    */
-  private initialize() {
+  private initialize():void {
     this.createDOM();
     this.setupEventListeners();
   }

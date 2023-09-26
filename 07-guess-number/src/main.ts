@@ -20,7 +20,7 @@ class GuessNumber {
   /**
    * Инициализация игры.
    */
-  private initialize() {
+  private initialize():void {
     this.createDOM(); // Создание DOM-структуры
     this.setupEventListeners(); // Настройка обработчиков событий
     console.log(`The number that was guessed is ${this.secret}`); // Вывод секретного числа в консоль

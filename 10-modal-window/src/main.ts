@@ -20,7 +20,7 @@ class ModalWindow {
    * Инициализирует модальное окно.
    * @private
    */
-  private initialize() {
+  private initialize():void {
     this.createDOM();
     this.setupEventListeners();
   }

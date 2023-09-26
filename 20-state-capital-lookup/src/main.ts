@@ -39,7 +39,7 @@ class StateCapitalLookup {
    * - Создает DOM элементы.
    * - Назначает обработчики событий.
    */
-  private initialize() {
+  private initialize():void {
     this.createDOM();
     this.setupEventListeners();
   }

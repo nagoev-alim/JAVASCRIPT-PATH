@@ -24,7 +24,7 @@ class Pokedex {
 
 - `initialize()`: В конструкторе класса вызывается метод `initialize()`, который создает DOM-элементы и настраивает обработчики событий.
 ```typescript
-private initialize() {
+private initialize():void {
   this.createDOM();
   this.setupEventListeners();
 }

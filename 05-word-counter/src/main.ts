@@ -10,7 +10,7 @@ class WordCounter {
   }
 
   // Метод для создания DOM-структуры и добавления элементов в корневой элемент.
-  private initialize() {
+  private initialize():void {
     this.createDOM();
     this.setupEventListeners();
   }
