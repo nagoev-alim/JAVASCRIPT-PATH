@@ -5,8 +5,8 @@ import './style.css';
 import { faker } from '@faker-js/faker';
 
 class FilterableList {
-  private input: HTMLInputElement | null = null;
-  private list: HTMLUListElement | null = null;
+  private input: HTMLInputElement;
+  private list: HTMLUListElement;
   private users: string[] = [];
 
   /**
@@ -19,7 +19,7 @@ class FilterableList {
   /**
    * Инициализирует компонент, создавая DOM-элементы и настраивая обработчики событий.
    */
-  private initialize():void {
+  private initialize(): void {
     this.createDOM();
     this.setupEventListeners();
   }
@@ -27,8 +27,8 @@ class FilterableList {
   /**
    * Создает необходимые DOM-элементы для компонента.
    */
-  private createDOM():void {
-    const root:HTMLDivElement = document.querySelector('#app')!;
+  private createDOM(): void {
+    const root: HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
 
     root.innerHTML = `
@@ -39,8 +39,8 @@ class FilterableList {
       </div>
     `;
 
-    this.input = root.querySelector('[data-query]') as HTMLInputElement;
-    this.list = root.querySelector('[data-list]') as HTMLUListElement;
+    this.input = root.querySelector('[data-query]')!;
+    this.list = root.querySelector('[data-list]')!;
   }
 
   /**
@@ -55,7 +55,7 @@ class FilterableList {
   /**
    * Отображает список пользователей на основе случайных данных.
    */
-  private renderUsers() {
+  private renderUsers(): void {
     if (!this.list) return;
     Array.from({ length: 100 }).forEach(() => this.users.push(`${faker.name.firstName()} ${faker.name.lastName()} ${faker.name.jobArea()}`));
     this.list.innerHTML = `${this.users.sort().map(user =>
@@ -63,7 +63,7 @@ class FilterableList {
         <span class='text-lg'>${user.split(' ')[0]} ${user.split(' ')[1]}</span>
         <span class='font-medium ml-auto'>${user.split(' ')[2]}</span>
         <div data-name class='hidden'>${user}</div>
-      </li>`
+      </li>`,
     ).join('')}`;
   }
 
@@ -71,7 +71,7 @@ class FilterableList {
    * Обрабатывает событие keyup на элементе ввода для фильтрации списка пользователей.
    * @param {Event} event - Событие keyup.
    */
-  private handleKeyUp(event: Event) {
+  private handleKeyUp(event: Event): void {
     const target = event.target as HTMLInputElement;
     if (target.value.trim().length === 0) {
       document.querySelectorAll('[data-name]')
