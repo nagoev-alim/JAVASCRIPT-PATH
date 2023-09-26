@@ -6,8 +6,8 @@ import { getRandomNumber } from './utils/getRandomNumber';
 
 class GuessNumber {
   // Приватные свойства класса
-  private form: HTMLFormElement | null = null;
-  private alert: HTMLDivElement | null = null;
+  private form: HTMLFormElement;
+  private alert: HTMLDivElement;
   private secret: number = getRandomNumber(1, 10); // Генерация секретного числа
   private attempts: number = 3; // Количество попыток
   /**
@@ -20,7 +20,7 @@ class GuessNumber {
   /**
    * Инициализация игры.
    */
-  private initialize():void {
+  private initialize(): void {
     this.createDOM(); // Создание DOM-структуры
     this.setupEventListeners(); // Настройка обработчиков событий
     console.log(`The number that was guessed is ${this.secret}`); // Вывод секретного числа в консоль
@@ -29,8 +29,8 @@ class GuessNumber {
   /**
    * Создает DOM-структуру игры.
    */
-  private createDOM():void {
-    const root:HTMLDivElement = document.querySelector('#app')!;
+  private createDOM(): void {
+    const root: HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
 
     // Вставка HTML-разметки в корневой элемент
@@ -48,8 +48,8 @@ class GuessNumber {
     `;
 
     // Получение ссылок на элементы DOM
-    this.form = document.querySelector<HTMLFormElement>('[data-form]');
-    this.alert = document.querySelector<HTMLDivElement>('[data-alert]');
+    this.form = document.querySelector<HTMLFormElement>('[data-form]')!;
+    this.alert = document.querySelector<HTMLDivElement>('[data-alert]')!;
   }
 
   /**
@@ -64,7 +64,7 @@ class GuessNumber {
    * Обрабатывает отправку формы.
    * @param event Событие отправки формы.
    */
-  private handleSubmit(event: Event) {
+  private handleSubmit(event: Event): void {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -112,7 +112,7 @@ class GuessNumber {
   /**
    * Перезапускает игру.
    */
-  private restart() {
+  private restart(): void {
     document.querySelector('[data-restart]')?.addEventListener('click', function() {
       return location.reload(); // Перезагрузка страницы для начала новой игры
     });
@@ -123,8 +123,8 @@ class GuessNumber {
    * @param type Тип сообщения ('error', 'lost', 'success').
    * @param text Текст сообщения.
    */
-  private showMessage(type: string, text: string) {
-    const input = document.querySelector<HTMLInputElement>('input');
+  private showMessage(type: string, text: string): void {
+    const input = document.querySelector('input')!;
     if (this.alert || input) {
       this.alert!.textContent = text;
       switch (type) {
