@@ -157,7 +157,7 @@ class PasswordGenerator {
    * Обработчик изменения ползунка диапазона
    * @param event Событие ввода
    */
-  private handleRange = (event: Event): void => {
+  private handleRange(event: Event): void {
     const target = event.target as HTMLInputElement;
     this.length.textContent = target.value;
   };
@@ -165,7 +165,7 @@ class PasswordGenerator {
   /**
    * Обработчик клика по кнопке генерации пароля
    */
-  private handleGenerate = () => {
+  private handleGenerate(): void {
     const length = +this.range.value;
     let params = null;
     this.option.forEach(option => params = { ...params, [option.dataset.option]: option.checked });
@@ -207,7 +207,7 @@ class PasswordGenerator {
   /**
    * Копирует сгенерированный пароль в буфер обмена
    */
-  private handleClipboard = (): void => {
+  private handleClipboard(): void {
     const textarea = document.createElement('textarea');
     const password = this.passwordInput.value;
     if (!password) return;
