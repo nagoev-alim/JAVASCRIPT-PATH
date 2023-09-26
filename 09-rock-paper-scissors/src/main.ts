@@ -29,13 +29,13 @@ class RockPaperScissors {
       src: 'https://lh3.googleusercontent.com/drive-viewer/AITFw-wrzbbnuuSAbSmJMnD4omat0v0E2OI_JmAFJ1j1E9d87qrvbuDe1KTn5BVI1Lo43rwznA_t1JHAU7FH59JwAca7qlg0=s2560',
     },
   ];
-  private rock: HTMLButtonElement | null = null;
-  private paper: HTMLButtonElement | null = null;
-  private scissors: HTMLButtonElement | null = null;
-  private user: HTMLSpanElement | null = null;
-  private computer: HTMLSpanElement | null = null;
-  private message: HTMLDivElement | null = null;
-  private button: HTMLButtonElement | null = null;
+  private rock: HTMLButtonElement;
+  private paper: HTMLButtonElement;
+  private scissors: HTMLButtonElement;
+  private user: HTMLSpanElement;
+  private computer: HTMLSpanElement;
+  private message: HTMLDivElement;
+  private button: HTMLButtonElement;
   private userScores: number = 0;
   private computerScores: number = 0;
 
@@ -49,7 +49,7 @@ class RockPaperScissors {
   /**
    * Инициализирует компонент, создавая DOM-элементы и устанавливая обработчики событий.
    */
-  private initialize():void {
+  private initialize(): void {
     this.createDOM();
     this.setupEventListeners();
   }
@@ -57,8 +57,8 @@ class RockPaperScissors {
   /**
    * Создает необходимые DOM-элементы для компонента.
    */
-  private createDOM():void {
-    const root:HTMLDivElement = document.querySelector('#app')!;
+  private createDOM(): void {
+    const root: HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
 
     root.innerHTML = `
@@ -92,13 +92,13 @@ class RockPaperScissors {
       </div>
     `;
 
-    this.rock = root.querySelector('[data-rock]') as HTMLButtonElement;
-    this.paper = root.querySelector('[data-paper]') as HTMLButtonElement;
-    this.scissors = root.querySelector('[data-scissors]') as HTMLButtonElement;
-    this.user = root.querySelector('[data-user-score]') as HTMLSpanElement;
-    this.computer = root.querySelector('[data-computer-score]') as HTMLSpanElement;
-    this.message = root.querySelector('[data-message]') as HTMLDivElement;
-    this.button = root.querySelector('[data-replay]') as HTMLButtonElement;
+    this.rock = root.querySelector('[data-rock]')!;
+    this.paper = root.querySelector('[data-paper]')!;
+    this.scissors = root.querySelector('[data-scissors]')!;
+    this.user = root.querySelector('[data-user-score]')!;
+    this.computer = root.querySelector('[data-computer-score]')!;
+    this.message = root.querySelector('[data-message]')!;
+    this.button = root.querySelector('[data-replay]')!;
   }
 
   /**
@@ -116,9 +116,8 @@ class RockPaperScissors {
    * Обрабатывает событие нажатия на кнопку игры.
    * @param {Event} event - Событие клика.
    */
-  private handleGame(event: Event) {
+  private handleGame(event: Event): void {
     const target = event.target as HTMLButtonElement;
-    console.log(target);
     const computerChoice = ['rock', 'paper', 'scissors'][Math.floor(Math.random() * 3)];
     const userChoice = Object.keys(target.dataset)[0];
 
@@ -149,7 +148,7 @@ class RockPaperScissors {
    * @param {string} computerChoice - Выбор компьютера.
    * @param {'win' | 'lose' | 'draw'} type - Результат игры.
    */
-  private optionGame(userChoice: string, computerChoice: string, type: 'win' | 'lose' | 'draw') {
+  private optionGame(userChoice: string, computerChoice: string, type: 'win' | 'lose' | 'draw'): void {
     if (!this.message || !this.user || !this.computer) return;
 
     switch (type) {
@@ -199,7 +198,7 @@ class RockPaperScissors {
    * @param {'win' | 'lose' | 'draw'} type - Результат игры.
    * @returns {string} - Строка с сообщением.
    */
-  private updateMessage(userChoice: string = '', computerChoice: string, type: 'win' | 'lose' | 'draw') {
+  private updateMessage(userChoice: string = '', computerChoice: string, type: 'win' | 'lose' | 'draw'): void {
     if (!this.message) return;
     this.message.innerHTML = `
       ${userChoice === 'rock' ? 'Rock' : userChoice === 'paper' ? 'Paper' : 'Scissors'}
@@ -214,7 +213,7 @@ class RockPaperScissors {
    * @param {string} message - Сообщение о результате.
    * @param {string} classname - Класс для стилизации сообщения.
    */
-  private endGame = (message: string, classname: string) => {
+  private endGame = (message: string, classname: string): void => {
     if (!this.message || !this.button) return;
     this.message.innerHTML = `${message}`;
     console.log(classname.split(' ').join(', '));
