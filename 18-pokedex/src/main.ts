@@ -43,7 +43,7 @@ class Pokedex {
    * Инициализирует приложение, создавая DOM-элементы и устанавливая обработчики событий.
    * @private
    */
-  private initialize():void {
+  private initialize(): void {
     this.createDOM();
     this.setupEventListeners();
   }
@@ -52,7 +52,7 @@ class Pokedex {
    * Создает DOM-элементы для приложения.
    * @private
    */
-  private createDOM():void {
+  private createDOM(): void {
     const root = document.querySelector('#app') as HTMLDivElement;
     if (!root) return;
 
@@ -132,7 +132,7 @@ class Pokedex {
    * Отображает интерфейс пользователя, включая список покемонов и элементы управления.
    * @private
    */
-  private renderUI() {
+  private renderUI(): void {
     if (this.pokemons) {
       this.renderPokemons(this.pages[this.index]);
     }
@@ -146,7 +146,7 @@ class Pokedex {
    * @private
    * @param {any[]} items - Массив данных о покемонах для отображения.
    */
-  private renderPokemons(items: any[]) {
+  private renderPokemons(items: any[]): void {
     if (this.pokemons) {
       this.pokemons.innerHTML = `
       ${items.map(({ id, name, pokemonId, type, color }: any) => `
@@ -172,7 +172,7 @@ class Pokedex {
    * @param {any[]} pages - Массив страниц данных о покемонах.
    * @param {number} activeIndex - Индекс активной страницы.
    */
-  private renderButtons(container: Element | null, pages: any[], activeIndex: number) {
+  private renderButtons(container: Element | null, pages: any[], activeIndex: number): void {
     if (container) {
       let buttons = pages.map((_, pageIndex) => `<li><button class='px-4 py-1.5 border rounded hover:bg-slate-50 ${activeIndex === pageIndex ? 'bg-slate-100' : 'bg-white'}' data-index='${pageIndex}'>${pageIndex + 1}</button></li>`);
       buttons.push(`<li>${this.index >= this.pages.length - 1 ? `<button class='px-2 py-1.5 border rounded bg-gray-100 cursor-not-allowed' data-type='next' disabled>Next</button>` : `<button class='bg-white px-2 py-1.5 border rounded hover:bg-slate-50' data-type='next'>Next</button>`}</li>`);
@@ -186,7 +186,7 @@ class Pokedex {
    * @private
    * @param {Event} event - Объект события клика.
    */
-  private handleClick({ target }: any) {
+  private handleClick({ target }: any): void {
     if (target.dataset.pagination) return;
     if (target.dataset.index) this.index = parseInt(target.dataset.index);
     if (target.dataset.type === 'next') this.index++;
