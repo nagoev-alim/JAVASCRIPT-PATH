@@ -5,9 +5,9 @@ import feather from 'feather-icons';
  * Представляет модальное окно с функцией открытия и закрытия.
  */
 class ModalWindow {
-  private overlay: HTMLDivElement | null = null;
-  private btnClose: NodeListOf<HTMLButtonElement> | null = null;
-  private btnOpen: HTMLButtonElement | null = null;
+  private overlay: HTMLDivElement;
+  private btnClose: NodeListOf<HTMLButtonElement>;
+  private btnOpen: HTMLButtonElement;
 
   /**
    * Создает новый экземпляр ModalWindow.
@@ -20,7 +20,7 @@ class ModalWindow {
    * Инициализирует модальное окно.
    * @private
    */
-  private initialize():void {
+  private initialize(): void {
     this.createDOM();
     this.setupEventListeners();
   }
@@ -29,8 +29,8 @@ class ModalWindow {
    * Создает элементы DOM для модального окна.
    * @private
    */
-  private createDOM():void {
-    const root:HTMLDivElement = document.querySelector('#app')!;
+  private createDOM(): void {
+    const root: HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
     root.innerHTML = `
       <div class='border shadow rounded max-w-md w-full p-3 grid gap-4'>
@@ -51,9 +51,9 @@ class ModalWindow {
       </div>
     `;
 
-    this.overlay = root.querySelector<HTMLDivElement>('[data-overlay]');
-    this.btnClose = root.querySelectorAll('[data-close]') as NodeListOf<HTMLButtonElement>;
-    this.btnOpen = root.querySelector<HTMLButtonElement>('[data-open]');
+    this.overlay = root.querySelector('[data-overlay]')!;
+    this.btnClose = root.querySelectorAll('[data-close]')!;
+    this.btnOpen = root.querySelector('[data-open]')!;
   }
 
   /**
@@ -61,9 +61,9 @@ class ModalWindow {
    * @private
    */
   private setupEventListeners(): void {
-    this.btnOpen?.addEventListener('click', this.handleClick.bind(this));
-    this.overlay?.addEventListener('click', this.handleClick.bind(this));
-    this.btnClose?.forEach(btn => btn.addEventListener('click', this.handleClick.bind(this)));
+    this.btnOpen.addEventListener('click', this.handleClick.bind(this));
+    this.overlay.addEventListener('click', this.handleClick.bind(this));
+    this.btnClose.forEach(btn => btn.addEventListener('click', this.handleClick.bind(this)));
     document.addEventListener('keydown', this.handleKeydown.bind(this));
   }
 
@@ -75,9 +75,9 @@ class ModalWindow {
   private handleClick(event: MouseEvent): void {
     const target = event.target as HTMLElement;
     if (target.matches('[data-open]')) {
-      this.overlay?.classList.remove('hidden');
+      this.overlay.classList.remove('hidden');
     } else if (target.matches('[data-close]') || target.matches('[data-overlay]')) {
-      this.overlay?.classList.add('hidden');
+      this.overlay.classList.add('hidden');
     }
   }
 
@@ -88,7 +88,7 @@ class ModalWindow {
    */
   private handleKeydown(event: KeyboardEvent): void {
     const key = event.key;
-    if (key === 'Escape') this.overlay?.classList.add('hidden');
+    if (key === 'Escape') this.overlay.classList.add('hidden');
   }
 }
 
