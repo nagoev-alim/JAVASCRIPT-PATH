@@ -17,10 +17,10 @@ interface ExchangeRateResponse {
 
 class CurrencyConverter {
   // Приватные поля для хранения ссылок на элементы DOM
-  private form: HTMLFormElement | null = null;
-  private selects: NodeListOf<HTMLSelectElement> | null = null;
-  private exchange: HTMLDivElement | null = null;
-  private switch: HTMLDivElement | null = null;
+  private form: HTMLFormElement;
+  private selects: NodeListOf<HTMLSelectElement>;
+  private exchange: HTMLDivElement;
+  private switch: HTMLDivElement;
 
   // Конструктор класса
   constructor() {
@@ -28,14 +28,14 @@ class CurrencyConverter {
   }
 
   // Метод инициализации
-  private initialize():void {
+  private initialize(): void {
     this.createDOM(); // Создание структуры DOM
     this.setupEventListeners(); // Настройка обработчиков событий
   }
 
   // Метод для создания структуры DOM
-  private createDOM():void {
-    const root:HTMLDivElement = document.querySelector('#app')!;
+  private createDOM(): void {
+    const root: HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
 
     root.innerHTML = `
@@ -74,10 +74,10 @@ class CurrencyConverter {
       </div>
     `;
 
-    this.form = document.querySelector('[data-form]') as HTMLFormElement;
-    this.selects = document.querySelectorAll('[data-select]') as NodeListOf<HTMLSelectElement>;
-    this.exchange = document.querySelector('[data-exchange]') as HTMLDivElement;
-    this.switch = document.querySelector('[data-switch]') as HTMLDivElement;
+    this.form = document.querySelector('[data-form]')!;
+    this.selects = document.querySelectorAll('[data-select]')!;
+    this.exchange = document.querySelector('[data-exchange]')!;
+    this.switch = document.querySelector('[data-switch]')!;
   }
 
   // Метод для настройки обработчиков событий
@@ -90,7 +90,7 @@ class CurrencyConverter {
   }
 
   // Метод для получения курса обмена валюты.
-  private getExchange() {
+  private getExchange(): void {
     if (!this.form || !this.selects || !this.exchange) return;
     const amountInput = this.form.querySelector('[type="number"]') as HTMLInputElement | null;
     if (!amountInput) return;
@@ -99,7 +99,7 @@ class CurrencyConverter {
   }
 
   // Метод для обработки отправки формы.
-  private handleSubmit(event: Event) {
+  private handleSubmit(event: Event): void {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -125,7 +125,7 @@ class CurrencyConverter {
   }
 
   // Метод для обработки изменения выбора валюты.
-  private handleChange(event: Event) {
+  private handleChange(event: Event): void {
     const target = event.target as HTMLSelectElement | null;
     if (!target) return;
     const flagImg = target.previousElementSibling as HTMLImageElement;
@@ -137,7 +137,7 @@ class CurrencyConverter {
   }
 
   //  Метод для обработки переключения валют.
-  private handleSwitch() {
+  private handleSwitch(): void {
     if (!this.selects) return;
     const amountInput = this.form?.querySelector('[type="number"]') as HTMLInputElement | null;
     if (!amountInput) return;
@@ -168,7 +168,7 @@ class CurrencyConverter {
   }
 
   // Метод для выполнения HTTP-запроса и получения данных о курсе обмена.
-  private async fetchData(amount: string, from: string, to: string) {
+  private async fetchData(amount: string, from: string, to: string): Promise<void> {
     if (!this.exchange) return;
     try {
       this.exchange.classList.remove('hidden');
