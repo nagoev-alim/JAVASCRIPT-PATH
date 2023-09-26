@@ -18,7 +18,7 @@ class WordCounter {
   // Метод для создания и размещения элементов DOM.
   private createDOM() {
     // Поиск корневого элемента по id 'app'.
-    const root = document.querySelector<HTMLDivElement>('#app');
+    const root:HTMLDivElement = document.querySelector('#app')!;
     if (!root) return; // Если элемент не найден, прервать выполнение.
 
     // Создание и добавление элементов в корневой элемент.

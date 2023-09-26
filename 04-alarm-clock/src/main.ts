@@ -7,10 +7,10 @@ import mp3 from './assets/sounds/ringtone.mp3'; // Импорт звуковог
 class AlarmClock {
   // Приватные свойства класса
   private select: NodeListOf<HTMLSelectElement>;
-  private time: HTMLParagraphElement | null = null;
-  private submit: HTMLButtonElement | null = null;
-  private body: HTMLDivElement | null = null;
-  private image: HTMLImageElement | null = null;
+  private time: HTMLParagraphElement;
+  private submit: HTMLButtonElement;
+  private body: HTMLDivElement;
+  private image: HTMLImageElement;
   private ringtone: HTMLAudioElement;
 
   private alarmTime: string = ''; // Время будильника
@@ -23,11 +23,11 @@ class AlarmClock {
     this.render(); // Вызов метода render для отрисовки интерфейса
 
     // Инициализация элементов DOM
-    this.select = document.querySelectorAll<HTMLSelectElement>('[data-select]');
-    this.time = document.querySelector<HTMLParagraphElement>('[data-time]');
-    this.submit = document.querySelector<HTMLButtonElement>('[data-submit]');
-    this.body = document.querySelector<HTMLDivElement>('[data-container]');
-    this.image = document.querySelector<HTMLImageElement>('[data-image]');
+    this.select = document.querySelectorAll('[data-select]')!;
+    this.time = document.querySelector('[data-time]')!;
+    this.submit = document.querySelector('[data-submit]')!;
+    this.body = document.querySelector('[data-container]')!;
+    this.image = document.querySelector('[data-image]')!;
     this.ringtone = new Audio(this.ringtoneURL); // Создание объекта для воспроизведения звука будильника
 
     this.setupEventListeners(); // Настройка обработчиков событий
@@ -35,8 +35,8 @@ class AlarmClock {
   }
 
   // Метод для отрисовки интерфейса
-  private render():void {
-    const root = document.querySelector<HTMLDivElement>('#app');
+  private render(): void {
+    const root: HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
 
     // Генерация HTML-разметки для интерфейса будильника
@@ -71,12 +71,12 @@ class AlarmClock {
   }
 
   // Метод для настройки обработчиков событий
-  private setupEventListeners = () => {
-    this.submit?.addEventListener('click', this.handleSetAlarm);
+  private setupEventListeners(): void {
+    this.submit.addEventListener('click', this.handleSetAlarm);
   };
 
   // Обработчик события установки/сброса будильника
-  private handleSetAlarm = () => {
+  private handleSetAlarm(): void {
     if (this.isAlarmSet) {
       // Если будильник уже установлен, сбрасываем его
       this.alarmTime = '';
@@ -108,7 +108,7 @@ class AlarmClock {
   };
 
   // Метод для обновления времени на интерфейсе и проверки срабатывания будильника
-  private updateTime = () => {
+  private updateTime(): void {
     setInterval(() => {
       const date = new Date();
       let h = date.getHours();

@@ -30,7 +30,7 @@ class ModalWindow {
    * @private
    */
   private createDOM() {
-    const root = document.querySelector<HTMLDivElement>('#app');
+    const root:HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
     root.innerHTML = `
       <div class='border shadow rounded max-w-md w-full p-3 grid gap-4'>

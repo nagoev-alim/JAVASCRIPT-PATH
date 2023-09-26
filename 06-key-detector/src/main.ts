@@ -19,7 +19,7 @@ class KeyDetector {
 
   private createDOM() {
     // Получаем корневой элемент с id "app"
-    const root = document.querySelector<HTMLDivElement>('#app');
+    const root:HTMLDivElement = document.querySelector('#app')!;
     if (!root) return; // Если элемент не найден, выходим из метода
 
     // Создаем структуру DOM для отображения информации о нажатой клавише

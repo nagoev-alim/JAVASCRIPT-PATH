@@ -47,7 +47,7 @@ class TypeConverter {
    * Создает структуру DOM для приложения Type Converter.
    */
   private createDom() {
-    const root = document.querySelector<HTMLDivElement>('#app');
+    const root:HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
     root.innerHTML = `
     <div class='max-w-5xl mx-auto grid gap-4'>

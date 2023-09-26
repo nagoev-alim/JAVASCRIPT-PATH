@@ -58,7 +58,7 @@ class RockPaperScissors {
    * Создает необходимые DOM-элементы для компонента.
    */
   private createDOM() {
-    const root = document.querySelector<HTMLDivElement>('#app');
+    const root:HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
 
     root.innerHTML = `

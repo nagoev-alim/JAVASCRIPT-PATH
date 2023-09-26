@@ -30,7 +30,7 @@ class GuessNumber {
    * Создает DOM-структуру игры.
    */
   private createDOM() {
-    const root = document.querySelector<HTMLDivElement>('#app');
+    const root:HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
 
     // Вставка HTML-разметки в корневой элемент
