@@ -7,29 +7,29 @@ import 'toastify-js/src/toastify.css';
  */
 class QRCodeGenerator {
   /**
-   * @member {HTMLFormElement | null} form - Форма для ввода текста и настроек QR-кода.
+   * @member {HTMLFormElement} form - Форма для ввода текста и настроек QR-кода.
    */
-  private form: HTMLFormElement | null = null;
+  private form: HTMLFormElement;
 
   /**
-   * @member {HTMLButtonElement | null} submitBtn - Кнопка для отправки формы и генерации QR-кода.
+   * @member {HTMLButtonElement} submitBtn - Кнопка для отправки формы и генерации QR-кода.
    */
-  private submitBtn: HTMLButtonElement | null = null;
+  private submitBtn: HTMLButtonElement;
 
   /**
-   * @member {HTMLCanvasElement | null} qrcode - Элемент для отображения QR-кода.
+   * @member {HTMLCanvasElement} qrcode - Элемент для отображения QR-кода.
    */
-  private qrcode: HTMLCanvasElement | null = null;
+  private qrcode: HTMLCanvasElement;
 
   /**
-   * @member {HTMLLinkElement | null} saveBtn - Ссылка для сохранения изображения QR-кода.
+   * @member {HTMLLinkElement} saveBtn - Ссылка для сохранения изображения QR-кода.
    */
-  private saveBtn: HTMLLinkElement | null = null;
+  private saveBtn: HTMLLinkElement;
 
   /**
-   * @member {HTMLDivElement | null} container - Контейнер для отображения QR-кода и сохраненной ссылки.
+   * @member {HTMLDivElement} container - Контейнер для отображения QR-кода и сохраненной ссылки.
    */
-  private container: HTMLDivElement | null = null;
+  private container: HTMLDivElement;
 
   /**
    * Создает экземпляр QRCodeGenerator и инициализирует его.
@@ -42,7 +42,7 @@ class QRCodeGenerator {
    * Инициализирует объект QRCodeGenerator.
    * Вызывает методы createDOM() и setupEventListeners() для настройки интерфейса и обработки событий.
    */
-  private initialize():void {
+  private initialize(): void {
     this.createDOM();
     this.setupEventListeners();
   }
@@ -50,8 +50,8 @@ class QRCodeGenerator {
   /**
    * Создает DOM-структуру интерфейса приложения и присваивает найденные элементы соответствующим полям класса.
    */
-  private createDOM():void {
-    const root:HTMLDivElement = document.querySelector('#app')!;
+  private createDOM(): void {
+    const root: HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
 
     const sizes: number[] = [100, 200, 300, 400, 500, 600, 700];
@@ -76,11 +76,11 @@ class QRCodeGenerator {
       </div>
     `;
 
-    this.form = root.querySelector<HTMLFormElement>('[data-form]');
-    this.submitBtn = root.querySelector<HTMLButtonElement>('[data-submit]');
-    this.qrcode = root.querySelector<HTMLCanvasElement>('#qrcode');
-    this.saveBtn = root.querySelector<HTMLLinkElement>('[data-save]');
-    this.container = root.querySelector<HTMLDivElement>('[data-container]');
+    this.form = root.querySelector('[data-form]')!;
+    this.submitBtn = root.querySelector('[data-submit]')!;
+    this.qrcode = root.querySelector('#qrcode')!;
+    this.saveBtn = root.querySelector('[data-save]')!;
+    this.container = root.querySelector('[data-container]')!;
   }
 
   /**
@@ -94,7 +94,7 @@ class QRCodeGenerator {
    * Обрабатывает отправку формы и генерирует QR-код.
    * @param {Event} event - Событие отправки формы.
    */
-  private handleSubmit(event: Event) {
+  private handleSubmit(event: Event): void {
     if (!this.qrcode || !this.container || !this.submitBtn) return;
 
     event.preventDefault();
