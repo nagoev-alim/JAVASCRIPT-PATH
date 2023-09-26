@@ -34,7 +34,7 @@ class ExpenseTracker {
   /**
    * Инициализирует компонент, создавая DOM-элементы и устанавливая обработчики событий.
    */
-  private initialize():void {
+  private initialize(): void {
     this.createDOM();
     this.setupEventListeners();
   }
@@ -42,8 +42,8 @@ class ExpenseTracker {
   /**
    * Создает необходимые DOM-элементы для компонента.
    */
-  private createDOM():void {
-    const root:HTMLDivElement = document.querySelector('#app')!;
+  private createDOM(): void {
+    const root: HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
 
     root.innerHTML = `
@@ -107,8 +107,9 @@ class ExpenseTracker {
    * Получает данные транзакций из локального хранилища.
    * @returns {Transaction[]} Массив транзакций.
    */
-  private storageGet(): Transaction[] {
-    return localStorage.getItem('transactions') ? JSON.parse(localStorage.getItem('transactions')!) : [];
+  private storageGet(): Transaction[] | [] {
+    const transactions = localStorage.getItem('transactions');
+    return transactions ? JSON.parse(transactions) : [];
   }
 
   /**
