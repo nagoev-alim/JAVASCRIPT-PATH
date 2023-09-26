@@ -62,7 +62,7 @@ class Counter {
   }
 
   // Метод для обновления стилей счетчика.
-  private updateCounterStyle(value: number) {
+  private updateCounterStyle(value: number):void {
     if (this.count) {
       // Удаляем все классы стилей счетчика.
       this.count.classList.remove('text-green-400', 'text-red-400', 'text-black');
@@ -79,7 +79,7 @@ class Counter {
   }
 
   // Метод для отрисовки интерфейса на странице.
-  render() {
+  render():void {
     const root: HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
     if (root) {

@@ -5,9 +5,9 @@ import { capitalStr } from './utils/capitalStr';
 // Создаем класс StopWatch для управления таймером.
 class StopWatch {
   // Приватные свойства класса для элементов DOM и управления таймером.
-  private buttons: NodeListOf<HTMLButtonElement> | null = null;
-  private minutes: HTMLSpanElement | null = null;
-  private seconds: HTMLSpanElement | null = null;
+  private buttons: NodeListOf<HTMLButtonElement>;
+  private minutes: HTMLSpanElement;
+  private seconds: HTMLSpanElement;
   private time: number = 0;
   private flag: boolean = false;
   private interval: number | null = null;
@@ -19,8 +19,8 @@ class StopWatch {
   }
 
   // Метод render() отвечает за создание интерфейса таймера и его отображение на странице.
-  private render() {
-    const root = document.querySelector<HTMLDivElement>('#app'); // Находим корневой элемент.
+  private render():void {
+    const root: HTMLDivElement = document.querySelector('#app')!; // Находим корневой элемент.
     if (!root) return; // Если корневой элемент не найден, завершаем функцию.
 
     // Создаем HTML-структуру для таймера и вставляем её в корневой элемент.
@@ -38,13 +38,13 @@ class StopWatch {
       </div>`;
 
     // Типизируем элементы DOM после их создания.
-    this.minutes = root.querySelector<HTMLSpanElement>('[data-minutes]');
-    this.seconds = root.querySelector<HTMLSpanElement>('[data-seconds]');
-    this.buttons = root.querySelectorAll<HTMLButtonElement>('[data-type]');
+    this.minutes = root.querySelector('[data-minutes]')!;
+    this.seconds = root.querySelector('[data-seconds]')!;
+    this.buttons = root.querySelectorAll('[data-type]')!;
   }
 
   // Метод setupEventListeners() назначает обработчики событий для кнопок таймера.
-  private setupEventListeners() {
+  private setupEventListeners():void {
     if (!this.buttons) return;
     this.buttons.forEach((button) => {
       button.addEventListener('click', () => this.handleClick(button)); // Добавляем обработчик для каждой кнопки.
@@ -52,7 +52,7 @@ class StopWatch {
   }
 
   // Метод handleClick() обрабатывает клики на кнопках и вызывает соответствующие методы.
-  private handleClick(button: HTMLButtonElement) {
+  private handleClick(button: HTMLButtonElement):void {
     const { type } = button.dataset; // Получаем тип кнопки из атрибута data-type.
     if (type) {
       switch (type) {
@@ -70,7 +70,7 @@ class StopWatch {
   }
 
   // Метод start() запускает таймер.
-  private start() {
+  private start():void {
     if (this.flag) return; // Если таймер уже запущен, выходим из метода.
     this.flag = true; // Устанавливаем флаг запуска таймера.
     this.interval = setInterval(() => {
@@ -86,14 +86,14 @@ class StopWatch {
   }
 
   // Метод pause() приостанавливает таймер.
-  private pause() {
+  private pause():void {
     if (!this.flag || !this.interval) return; // Если таймер не запущен или интервал не установлен, выходим из метода.
     this.flag = false; // Сбрасываем флаг запуска таймера.
     clearInterval(this.interval); // Останавливаем интервал обновления времени.
   }
 
   // Метод reset() сбрасывает таймер.
-  private reset() {
+  private reset():void {
     this.pause(); // Приостанавливаем таймер.
     this.time = 0; // Сбрасываем счетчик времени.
     if (this.minutes && this.seconds) {
