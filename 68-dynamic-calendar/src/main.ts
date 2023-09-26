@@ -73,7 +73,7 @@ class Calendar {
    * Рендерит календарь на основе текущего года и месяца.
    * @private
    */
-  private render() {
+  private render():void {
     let firstDayOfMonth = new Date(this.currYear, this.currMonth, 1).getDay();
     let lastDateOfMonth = new Date(this.currYear, this.currMonth + 1, 0).getDate();
     let lastDayOfMonth = new Date(this.currYear, this.currMonth, lastDateOfMonth).getDay();

@@ -55,7 +55,7 @@ class GuessNumber {
   /**
    * Настраивает обработчики событий.
    */
-  private setupEventListeners() {
+  private setupEventListeners(): void {
     // Обработчик отправки формы
     this.form?.addEventListener('submit', this.handleSubmit.bind(this));
   }

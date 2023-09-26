@@ -46,7 +46,7 @@ class FilterableList {
   /**
    * Настраивает обработчики событий для элемента ввода.
    */
-  private setupEventListeners() {
+  private setupEventListeners(): void {
     if (!this.input) return;
     this.renderUsers();
     this.input.addEventListener('keyup', this.handleKeyUp);

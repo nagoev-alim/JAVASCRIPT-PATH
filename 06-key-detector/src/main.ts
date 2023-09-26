@@ -46,7 +46,7 @@ class KeyDetector {
     this.container = document.querySelector<HTMLDivElement>('[data-container]');
   }
 
-  private setupEventListeners() {
+  private setupEventListeners(): void {
     // Устанавливаем обработчик события "keydown" для окна браузера
     window.addEventListener('keydown', ({ key, keyCode }) => {
       // Скрываем предварительное сообщение и отображаем контейнер

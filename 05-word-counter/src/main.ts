@@ -38,7 +38,7 @@ class WordCounter {
   }
 
   // Метод для установки обработчиков событий.
-  private setupEventListeners() {
+  private setupEventListeners(): void {
     // Добавление обработчика события 'input' для текстового поля.
     this.textarea?.addEventListener('input', this.handleCount.bind(this));
   }

@@ -65,7 +65,7 @@ class StateCapitalLookup {
   /**
    * Назначает обработчик события ввода для элемента input.
    */
-  private setupEventListeners() {
+  private setupEventListeners(): void {
     this.input.addEventListener('input', this.handleChange.bind(this));
   }
 

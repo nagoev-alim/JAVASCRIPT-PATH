@@ -85,7 +85,7 @@ class QRCodeGenerator {
   /**
    * Настраивает обработчики событий для формы.
    */
-  private setupEventListeners() {
+  private setupEventListeners(): void {
     this.form?.addEventListener('submit', this.handleSubmit.bind(this));
   }
 

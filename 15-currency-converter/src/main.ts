@@ -81,7 +81,7 @@ class CurrencyConverter {
   }
 
   // Метод для настройки обработчиков событий
-  private setupEventListeners() {
+  private setupEventListeners(): void {
     if (!this.form || !this.selects || !this.switch) return;
     this.getExchange();
     this.form.addEventListener('submit', this.handleSubmit.bind(this));

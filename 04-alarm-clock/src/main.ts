@@ -35,7 +35,7 @@ class AlarmClock {
   }
 
   // Метод для отрисовки интерфейса
-  private render() {
+  private render():void {
     const root = document.querySelector<HTMLDivElement>('#app');
     if (!root) return;
 

@@ -104,7 +104,7 @@ class RockPaperScissors {
   /**
    * Устанавливает обработчики событий для кнопок игры.
    */
-  private setupEventListeners() {
+  private setupEventListeners(): void {
     if (!this.rock || !this.paper || !this.scissors || !this.button) return;
     this.rock.addEventListener('click', this.handleGame.bind(this));
     this.paper.addEventListener('click', this.handleGame.bind(this));

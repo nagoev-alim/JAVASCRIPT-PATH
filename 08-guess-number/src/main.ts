@@ -56,7 +56,7 @@ class GuessNumber {
   /**
    * Устанавливает обработчики событий для ввода и формы.
    */
-  private setupEventListeners() {
+  private setupEventListeners(): void {
     this.input?.focus();
     this.showMessage('👨 Введите ваше имя:');
     this.form?.addEventListener('submit', this.handleSubmit.bind(this));

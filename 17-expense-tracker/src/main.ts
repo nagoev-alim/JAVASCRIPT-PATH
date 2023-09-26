@@ -96,7 +96,7 @@ class ExpenseTracker {
   /**
    * Устанавливает обработчики событий для элементов формы и истории транзакций.
    */
-  private setupEventListeners() {
+  private setupEventListeners(): void {
     this.transactions = this.storageGet();
     this.storageDisplay();
     this.form.addEventListener('submit', this.handeSubmit.bind(this));

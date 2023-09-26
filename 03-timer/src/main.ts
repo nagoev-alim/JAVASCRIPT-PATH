@@ -8,13 +8,13 @@ import 'toastify-js/src/toastify.css';
  * Этот класс представляет собой интерактивный таймер с пользовательским интерфейсом.
  */
 class Timer {
-  private form: HTMLFormElement | null = null; // Форма для ввода времени.
+  private form: HTMLFormElement; // Форма для ввода времени.
   private interval: number | null = null; // Интервал для обновления таймера.
   private secondsRemaining: number = 0; // Оставшееся количество секунд на таймере.
-  private minutes: HTMLSpanElement | null = null; // Элемент для отображения минут.
-  private seconds: HTMLSpanElement | null = null; // Элемент для отображения секунд.
-  private controlBtn: HTMLButtonElement | null = null; // Кнопка управления таймером (Старт/Пауза).
-  private resetBtn: HTMLButtonElement | null = null; // Кнопка сброса таймера.
+  private minutes: HTMLSpanElement; // Элемент для отображения минут.
+  private seconds: HTMLSpanElement; // Элемент для отображения секунд.
+  private controlBtn: HTMLButtonElement; // Кнопка управления таймером (Старт/Пауза).
+  private resetBtn: HTMLButtonElement; // Кнопка сброса таймера.
 
   /**
    * Создает экземпляр класса Timer.
@@ -28,17 +28,17 @@ class Timer {
   /**
    * Настраивает обработчики событий для формы, кнопки управления и кнопки сброса.
    */
-  private setupEventListeners() {
-    this.form?.addEventListener('submit', this.handleSubmit.bind(this)); // Обработчик отправки формы.
-    this.controlBtn?.addEventListener('click', this.handleControl.bind(this)); // Обработчик клика по кнопке управления.
-    this.resetBtn?.addEventListener('click', this.handleReset.bind(this)); // Обработчик клика по кнопке сброса.
+  private setupEventListeners(): void {
+    this.form.addEventListener('submit', this.handleSubmit.bind(this)); // Обработчик отправки формы.
+    this.controlBtn.addEventListener('click', this.handleControl.bind(this)); // Обработчик клика по кнопке управления.
+    this.resetBtn.addEventListener('click', this.handleReset.bind(this)); // Обработчик клика по кнопке сброса.
   }
 
   /**
    * Создает интерфейс таймера и инициализирует ссылки на DOM-элементы.
    */
-  private render() {
-    const root = document.querySelector<HTMLDivElement>('#app');
+  private render(): void {
+    const root: HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
 
     // Создание HTML-структуры для интерфейса таймера и его отображение на странице.
@@ -62,22 +62,22 @@ class Timer {
     </div>`;
 
     // Инициализация ссылок на DOM-элементы после их создания.
-    this.minutes = root.querySelector<HTMLSpanElement>('[data-minutes]');
-    this.seconds = root.querySelector<HTMLSpanElement>('[data-seconds]');
-    this.controlBtn = root.querySelector<HTMLButtonElement>('[data-control]');
-    this.resetBtn = root.querySelector<HTMLButtonElement>('[data-reset]');
-    this.form = root.querySelector<HTMLFormElement>('[data-form]');
+    this.minutes = root.querySelector('[data-minutes]')!;
+    this.seconds = root.querySelector('[data-seconds]')!;
+    this.controlBtn = root.querySelector('[data-control]')!;
+    this.resetBtn = root.querySelector('[data-reset]')!;
+    this.form = root.querySelector('[data-form]')!;
   }
 
   /**
    * Обработчик события отправки формы.
    * @param event Событие отправки формы.
    */
-  private handleSubmit(event: Event) {
+  private handleSubmit(event: Event): void {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
-    const time = formData.get('time');
+    const time = formData.get('time') as string;
 
     if (time !== null) {
       const numericTime = parseFloat(time as string);
@@ -105,7 +105,7 @@ class Timer {
   /**
    * Останавливает таймер, если он активен.
    */
-  private stop() {
+  private stop(): void {
     if (!this.interval) return;
     clearInterval(this.interval);
     this.interval = null;
@@ -115,7 +115,7 @@ class Timer {
   /**
    * Обновляет отображение времени на таймере.
    */
-  private updateTime() {
+  private updateTime(): void {
     if (this.minutes && this.seconds) {
       this.minutes.textContent = Math.floor(this.secondsRemaining / 60).toString().padStart(2, '0');
       this.seconds.textContent = (this.secondsRemaining % 60).toString().padStart(2, '0');
@@ -125,7 +125,7 @@ class Timer {
   /**
    * Обновляет состояние кнопки управления (Старт/Пауза).
    */
-  private updateControl = () => {
+  private updateControl(): void {
     if (this.controlBtn) {
       this.controlBtn.innerHTML = this.interval === null ? `${feather.icons.play.toSvg()}` : `${feather.icons.pause.toSvg()}`;
     }
@@ -134,14 +134,14 @@ class Timer {
   /**
    * Обработчик события клика по кнопке управления.
    */
-  private handleControl = () => {
+  private handleControl(): void {
     this.interval === null ? this.start() : this.stop();
   };
 
   /**
    * Обработчик события клика по кнопке сброса.
    */
-  private handleReset = () => {
+  private handleReset(): void {
     this.stop();
     this.secondsRemaining = 0;
     this.updateTime();
@@ -152,7 +152,7 @@ class Timer {
   /**
    * Запускает таймер, если есть оставшееся время.
    */
-  private start() {
+  private start(): void {
     if (this.secondsRemaining === 0) return;
     this.interval = setInterval(() => {
       this.secondsRemaining--;

@@ -75,7 +75,7 @@ class TypeConverter {
   /**
    * Устанавливает слушателей событий для полей ввода.
    */
-  private setupEventListeners() {
+  private setupEventListeners(): void {
     this.data.forEach(({ name }) => {
       document.querySelectorAll(`[data-${name}]`).forEach((value) => {
         value.addEventListener('input', () => this.converter(value));

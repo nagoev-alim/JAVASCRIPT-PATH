@@ -60,7 +60,7 @@ class ModalWindow {
    * Устанавливает обработчики событий для модального окна.
    * @private
    */
-  private setupEventListeners() {
+  private setupEventListeners(): void {
     this.btnOpen?.addEventListener('click', this.handleClick.bind(this));
     this.overlay?.addEventListener('click', this.handleClick.bind(this));
     this.btnClose?.forEach(btn => btn.addEventListener('click', this.handleClick.bind(this)));
