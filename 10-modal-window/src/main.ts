@@ -29,7 +29,7 @@ class ModalWindow {
    * Создает элементы DOM для модального окна.
    * @private
    */
-  private createDOM() {
+  private createDOM():void {
     const root:HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
     root.innerHTML = `

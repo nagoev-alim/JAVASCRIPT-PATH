@@ -1,8 +1,8 @@
 import './style.css';
 
 class WordCounter {
-  private textarea: HTMLTextAreaElement | null = null;
-  private statsText: HTMLDivElement | null = null;
+  private textarea: HTMLTextAreaElement;
+  private statsText: HTMLDivElement;
 
   constructor() {
     // Вызывается метод инициализации при создании экземпляра класса.
@@ -16,9 +16,9 @@ class WordCounter {
   }
 
   // Метод для создания и размещения элементов DOM.
-  private createDOM() {
+  private createDOM(): void {
     // Поиск корневого элемента по id 'app'.
-    const root:HTMLDivElement = document.querySelector('#app')!;
+    const root: HTMLDivElement = document.querySelector('#app')!;
     if (!root) return; // Если элемент не найден, прервать выполнение.
 
     // Создание и добавление элементов в корневой элемент.
@@ -33,8 +33,8 @@ class WordCounter {
     `;
 
     // Получение ссылок на созданные элементы.
-    this.textarea = root.querySelector<HTMLTextAreaElement>('[data-textarea]');
-    this.statsText = root.querySelector<HTMLDivElement>('[data-result]');
+    this.textarea = root.querySelector('[data-textarea]')!;
+    this.statsText = root.querySelector('[data-result]')!;
   }
 
   // Метод для установки обработчиков событий.
@@ -44,7 +44,7 @@ class WordCounter {
   }
 
   // Метод для обработки события 'input' и подсчета слов и символов.
-  private handleCount({ target }: Event) {
+  private handleCount({ target }: Event): void {
     // Проверка наличия ссылки на текстовое поле и его типа.
     if (this.statsText && target instanceof HTMLTextAreaElement) {
       const text = target.value.trim();

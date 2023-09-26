@@ -52,7 +52,7 @@ class Pokedex {
    * Создает DOM-элементы для приложения.
    * @private
    */
-  private createDOM() {
+  private createDOM():void {
     const root = document.querySelector('#app') as HTMLDivElement;
     if (!root) return;
 

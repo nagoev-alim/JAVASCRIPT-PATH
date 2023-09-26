@@ -33,7 +33,7 @@ class GuessNumber {
   /**
    * Создает DOM-элементы для игры.
    */
-  private createDOM() {
+  private createDOM():void {
     const root:HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
 

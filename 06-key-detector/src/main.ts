@@ -17,7 +17,7 @@ class KeyDetector {
     this.setupEventListeners(); // Устанавливаем обработчики событий
   }
 
-  private createDOM() {
+  private createDOM():void {
     // Получаем корневой элемент с id "app"
     const root:HTMLDivElement = document.querySelector('#app')!;
     if (!root) return; // Если элемент не найден, выходим из метода

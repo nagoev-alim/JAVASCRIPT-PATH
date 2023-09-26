@@ -29,7 +29,7 @@ class GuessNumber {
   /**
    * Создает DOM-структуру игры.
    */
-  private createDOM() {
+  private createDOM():void {
     const root:HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
 

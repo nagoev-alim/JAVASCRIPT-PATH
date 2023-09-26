@@ -32,7 +32,7 @@ private initialize() {
 
 - `createDOM()`: Метод `createDOM()` создает DOM-структуру приложения, включая контейнер для списка покемонов и элементы управления.
 ```typescript
-private createDOM() {
+private createDOM():void {
   // Создание DOM-элементов
   // ...
 }

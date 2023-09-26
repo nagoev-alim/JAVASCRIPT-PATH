@@ -50,7 +50,7 @@ class QRCodeGenerator {
   /**
    * Создает DOM-структуру интерфейса приложения и присваивает найденные элементы соответствующим полям класса.
    */
-  private createDOM() {
+  private createDOM():void {
     const root:HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
 

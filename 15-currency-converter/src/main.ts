@@ -34,7 +34,7 @@ class CurrencyConverter {
   }
 
   // Метод для создания структуры DOM
-  private createDOM() {
+  private createDOM():void {
     const root:HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
 

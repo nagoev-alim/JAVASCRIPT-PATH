@@ -42,7 +42,7 @@ class ExpenseTracker {
   /**
    * Создает необходимые DOM-элементы для компонента.
    */
-  private createDOM() {
+  private createDOM():void {
     const root:HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
 
