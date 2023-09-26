@@ -39,15 +39,15 @@ class TypeConverter {
    * Инициализирует класс TypeConverter, создает структуру DOM и настраивает слушателей событий.
    */
   constructor() {
-    this.createDom();
+    this.createDOM();
     this.setupEventListeners();
   }
 
   /**
    * Создает структуру DOM для приложения Type Converter.
    */
-  private createDOM():void {
-    const root:HTMLDivElement = document.querySelector('#app')!;
+  private createDOM(): void {
+    const root: HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
     root.innerHTML = `
     <div class='max-w-5xl mx-auto grid gap-4'>
@@ -88,7 +88,7 @@ class TypeConverter {
    * Конвертирует значение поля ввода на основе выбранной единицы и типа измерения.
    * @param input - HTMLInputElement для конвертации.
    */
-  private converter(input: HTMLInputElement) {
+  private converter(input: HTMLInputElement): void {
     const value = parseFloat(input.value);
     const [type] = Object.keys(input.dataset);
     const [name] = Object.values(input.dataset);
