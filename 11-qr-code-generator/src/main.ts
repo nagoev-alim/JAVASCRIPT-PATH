@@ -6,11 +6,11 @@ import 'toastify-js/src/toastify.css';
  * Класс QRCodeGenerator представляет генератор QR-кода и управляет его интерфейсом.
  */
 class QRCodeGenerator {
-  private form: HTMLFormElement | null = null;
-  private qrcode: HTMLImageElement | null = null;
-  private submitBtn: HTMLButtonElement | null = null;
-  private saveBtn: HTMLButtonElement | null = null;
-  private container: HTMLDivElement | null = null;
+  private form: HTMLFormElement;
+  private qrcode: HTMLImageElement;
+  private submitBtn: HTMLButtonElement;
+  private saveBtn: HTMLButtonElement;
+  private container: HTMLDivElement;
 
   /**
    * Создает экземпляр класса QRCodeGenerator и инициализирует его.
@@ -22,7 +22,7 @@ class QRCodeGenerator {
   /**
    * Инициализирует элементы DOM и устанавливает обработчики событий.
    */
-  private initialize():void {
+  private initialize(): void {
     this.createDOM();
     this.setupEventListeners();
   }
@@ -30,8 +30,8 @@ class QRCodeGenerator {
   /**
    * Создает элементы DOM для интерфейса генератора QR-кода.
    */
-  private createDOM():void {
-    const root:HTMLDivElement = document.querySelector('#app')!;
+  private createDOM(): void {
+    const root: HTMLDivElement = document.querySelector('#app')!;
     if (!root) return;
 
     root.innerHTML = `
@@ -58,26 +58,26 @@ class QRCodeGenerator {
       </div>
     `;
 
-    this.form = root.querySelector<HTMLFormElement>('[data-form]');
-    this.qrcode = root.querySelector<HTMLImageElement>('[data-code]');
-    this.submitBtn = root.querySelector<HTMLButtonElement>('[data-submit]');
-    this.saveBtn = root.querySelector<HTMLButtonElement>('[data-save]');
-    this.container = root.querySelector<HTMLDivElement>('[data-container]');
+    this.form = root.querySelector('[data-form]')!;
+    this.qrcode = root.querySelector('[data-code]')!;
+    this.submitBtn = root.querySelector('[data-submit]')!;
+    this.saveBtn = root.querySelector('[data-save]')!;
+    this.container = root.querySelector('[data-container]')!;
   }
 
   /**
    * Устанавливает обработчики событий для формы и кнопки "Save".
    */
   private setupEventListeners(): void {
-    this.form?.addEventListener('submit', this.handleSubmit.bind(this));
-    this.saveBtn?.addEventListener('click', this.handleSave.bind(this));
+    this.form.addEventListener('submit', this.handleSubmit.bind(this));
+    this.saveBtn.addEventListener('click', this.handleSave.bind(this));
   }
 
   /**
    * Обрабатывает событие отправки формы для создания QR-кода.
    * @param {Event} event - Событие отправки формы.
    */
-  private handleSubmit(event: Event) {
+  private handleSubmit(event: Event): void {
     event.preventDefault();
     if (!this.submitBtn || !this.qrcode || !this.container) return;
     const form = event.target as HTMLFormElement;
@@ -103,7 +103,7 @@ class QRCodeGenerator {
   /**
    * Обрабатывает событие нажатия кнопки "Save" для сохранения QR-кода.
    */
-  private async handleSave() {
+  private async handleSave(): Promise<void> {
     if (!this.qrcode) return;
     const image = await fetch(this.qrcode.src);
     const imageBlob = await image.blob();
