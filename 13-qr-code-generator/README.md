@@ -30,10 +30,10 @@
 Общий функционал этого кода заключается в создании веб-интерфейса для генерации QR-кодов и обработке отправки формы для их создания и отображения.
 
 ---
-#### 🌄 Preview:
-![App Preview](https://lh3.googleusercontent.com/drive-viewer/AITFw-y_6a-mW8w5-ehxeP1npU8e-qUkOCC7tIzFT3n2C5c44WreD4IFykYZVu-3c9Q59B12DpIl2xhLWwzcZuxZwYlkM0FiaQ=s1600)
+#### 🌄 Превью:
+![Превью](https://lh3.googleusercontent.com/drive-viewer/AITFw-y_6a-mW8w5-ehxeP1npU8e-qUkOCC7tIzFT3n2C5c44WreD4IFykYZVu-3c9Q59B12DpIl2xhLWwzcZuxZwYlkM0FiaQ=s1600)
 
 
 -----
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)
 

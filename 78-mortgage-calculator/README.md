@@ -24,4 +24,4 @@ To send messages you must use a local server (e.g. Open Server, MAMP PRO)
 
 -----
 
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)

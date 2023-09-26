@@ -65,12 +65,12 @@ new WikiSearch();
 
 ---
 
-#### 🌄 Preview:
+#### 🌄 Превью:
 
-![App Preview](https://lh3.googleusercontent.com/drive-viewer/AITFw-yJZypJJ_yizerdZvwNPxVkMHDW7vCjXaSNPjIsm-PBAAgcBSz0aMnt9zBUdtFXycnbdknzZ5QxoxZ98AT3emz61gY7hg=s1600)
+![Превью](https://lh3.googleusercontent.com/drive-viewer/AITFw-yJZypJJ_yizerdZvwNPxVkMHDW7vCjXaSNPjIsm-PBAAgcBSz0aMnt9zBUdtFXycnbdknzZ5QxoxZ98AT3emz61gY7hg=s1600)
 
 
 -----
 
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)
 

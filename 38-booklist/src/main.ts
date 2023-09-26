@@ -10,7 +10,7 @@ import axios from 'axios';
  */
 interface IBook {
   title: string; // Название книги
-  author: string; // Автор книги
+  Автор: string; // Автор книги
   isbn: string; // ISBN книги
   id: string; // Уникальный идентификатор книги
 }
@@ -302,7 +302,7 @@ class BookList {
       } = this.booksISBN.filter(({ id }) => id === bookId)[0];
       const bookInfo = {
         title,
-        author: authors && authors.length !== 0 ? authors[0] : 'No info',
+        Автор: authors && authors.length !== 0 ? authors[0] : 'No info',
         isbn: industryIdentifiers[0].identifier,
         id: bookId,
       };

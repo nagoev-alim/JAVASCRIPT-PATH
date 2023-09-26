@@ -13,10 +13,10 @@
 - Затем создается экземпляр класса TypeConverter, что инициализирует приложение, создавая интерфейс для конвертации различных типов измерений и их единиц.
 
 ---
-#### 🌄 Preview:
-![App Preview](https://lh3.googleusercontent.com/drive-viewer/AITFw-zikOyt67yUS_bO1c_psQgetBcMz0afrnQrJ1u2qpfsa0ZEw32wJo-_P71vwPawpuV9Zihc823Mlf62x5xhV4EkCT1X=s1600)
+#### 🌄 Превью:
+![Превью](https://lh3.googleusercontent.com/drive-viewer/AITFw-zikOyt67yUS_bO1c_psQgetBcMz0afrnQrJ1u2qpfsa0ZEw32wJo-_P71vwPawpuV9Zihc823Mlf62x5xhV4EkCT1X=s1600)
 
 
 -----
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)
 

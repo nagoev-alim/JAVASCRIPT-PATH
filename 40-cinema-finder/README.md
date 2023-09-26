@@ -164,12 +164,12 @@ new Cinema();
 
 ---
 
-#### 🌄 Preview:
+#### 🌄 Превью:
 
-![App Preview](https://lh3.googleusercontent.com/drive-viewer/AITFw-xLbLC-x141oR8L1B3qIpcOQGzkcS9rjWAo250DG9cgbSeCgujVvteDwzM5WHZIbBEPXmLHC8ke6yAcmQyTBSUVJwIdcw=s1600)
+![Превью](https://lh3.googleusercontent.com/drive-viewer/AITFw-xLbLC-x141oR8L1B3qIpcOQGzkcS9rjWAo250DG9cgbSeCgujVvteDwzM5WHZIbBEPXmLHC8ke6yAcmQyTBSUVJwIdcw=s1600)
 
 
 -----
 
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)
 

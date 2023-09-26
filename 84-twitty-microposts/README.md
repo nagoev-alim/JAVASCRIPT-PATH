@@ -52,12 +52,12 @@ new Twitty();
 
 ---
 
-#### 🌄 Preview:
+#### 🌄 Превью:
 
-![App Preview](https://lh3.googleusercontent.com/drive-viewer/AITFw-xR0sw9ownhDJYySVjFiCd_er7BGQezGno0JontkjytV_zJ2uKP5Bv9zGHl3WabeNQq0YSbLv7j0g-gV8ZkAgrHrYBT=s1600)
+![Превью](https://lh3.googleusercontent.com/drive-viewer/AITFw-xR0sw9ownhDJYySVjFiCd_er7BGQezGno0JontkjytV_zJ2uKP5Bv9zGHl3WabeNQq0YSbLv7j0g-gV8ZkAgrHrYBT=s1600)
 
 
 -----
 
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)
 

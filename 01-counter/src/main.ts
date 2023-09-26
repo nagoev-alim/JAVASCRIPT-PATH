@@ -3,7 +3,7 @@ import './style.css';
 // Создаем класс Counter, который управляет счетчиком и кнопками.
 class Counter {
   // Приватные свойства класса для хранения ссылок на элементы DOM.
-  private count: HTMLParagraphElement | null;
+  private count: HTMLParagraphElement;
   private buttons: NodeListOf<HTMLButtonElement>;
 
   // Конструктор класса.
@@ -12,10 +12,10 @@ class Counter {
     this.render();
 
     // Находим элемент с атрибутом data-count и сохраняем ссылку на него в this.count.
-    this.count = document.querySelector('[data-count]');
+    this.count = document.querySelector('[data-count]')!;
 
     // Находим все элементы с атрибутом data-type и сохраняем ссылки на них в this.buttons.
-    this.buttons = document.querySelectorAll('[data-type]');
+    this.buttons = document.querySelectorAll('[data-type]')!;
 
     // Добавляем обработчик клика на каждую кнопку, вызывая метод handleClick() и передавая кнопку в качестве аргумента.
     this.buttons.forEach(button => {
@@ -24,7 +24,7 @@ class Counter {
   }
 
   // Метод для обработки кликов на кнопках.
-  handleClick(button: HTMLButtonElement) {
+  handleClick(button: HTMLButtonElement):void {
     // Извлекаем значение атрибута data-type из кнопки.
     const { type } = button.dataset;
 
@@ -52,7 +52,7 @@ class Counter {
   }
 
   // Метод для обновления текста счетчика.
-  private updateCounter(value: number) {
+  private updateCounter(value: number):void {
     if (this.count) {
       // Устанавливаем новое значение текста счетчика.
       this.count.textContent = value.toString();
@@ -80,13 +80,14 @@ class Counter {
 
   // Метод для отрисовки интерфейса на странице.
   render() {
-    const root: HTMLDivElement | null = document.querySelector('#app');
+    const root: HTMLDivElement = document.querySelector('#app')!;
+    if (!root) return;
     if (root) {
       // Вставляем HTML-структуру счетчика и кнопок в корневой элемент.
       root.innerHTML = `
         <div class='grid gap-3 border shadow rounded max-w-md mx-auto w-full p-4 md:p-8'>
             <h1 class='text-center text-2xl font-bold lg:text-5xl'>Counter</h1>
-            <p class='text-center text-6xl font-bold lg:text-8xl' data-count=''>0</p>
+            <p class='text-center text-6xl font-bold lg:text-8xl' data-count>0</p>
             <div class='grid gap-2 sm:grid-cols-3'>
               <button class='button font-bold shadow border border-red-400 text-red-400' data-type='decrement'>Decrement</button>
               <button class='button font-bold shadow border border-gray-400 text-gray-400' data-type='reset'>Reset</button>

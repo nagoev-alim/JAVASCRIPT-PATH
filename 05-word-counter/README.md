@@ -50,10 +50,10 @@ private handleCount(event: Event): void
 - `private statsText: HTMLDivElement | null`: Ссылка на элемент, в котором отображается результат подсчета слов и символов.
 
 ---
-#### 🌄 Preview:
-![App Preview](https://lh3.googleusercontent.com/drive-viewer/AITFw-xWC91HJqH1Riwsdo2264BIB-GM7e_k794vex4eXN2vjhDwKoN1AkwQjpqbWDHR8oR4x9DwFe-6ed9Esen0eCa2pMVHyw=s1600)
+#### 🌄 Превью:
+![Превью](https://lh3.googleusercontent.com/drive-viewer/AITFw-xWC91HJqH1Riwsdo2264BIB-GM7e_k794vex4eXN2vjhDwKoN1AkwQjpqbWDHR8oR4x9DwFe-6ed9Esen0eCa2pMVHyw=s1600)
 
 
 -----
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)
 

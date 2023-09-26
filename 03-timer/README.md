@@ -64,10 +64,10 @@
 - Валидация ввода проверяет, что введенное значение - это число и оно больше 60 (минимальное количество минут).
 
 ---
-#### 🌄 Preview:
-![App Preview](https://lh3.googleusercontent.com/drive-viewer/AITFw-x2F40402Fsfd_rLhtpVN0ZM7-aVAIKHSIdwfsxXhX8mgZtdCoLe5lgs8LpkRhermGfXYVoC34R3ZtgdUGS3njIt4B_hg=s1600)
-![App Preview](https://lh3.googleusercontent.com/drive-viewer/AITFw-wpd5AokimckbInfEd7W8r_E3aGOVA-mQ_5px6n_Afab6AvBtnOk2mIgz1lcixsIwPnhIuRKPU4F9HZH6fGzGVoRuQKsg=s1600)
+#### 🌄 Превью:
+![Превью](https://lh3.googleusercontent.com/drive-viewer/AITFw-x2F40402Fsfd_rLhtpVN0ZM7-aVAIKHSIdwfsxXhX8mgZtdCoLe5lgs8LpkRhermGfXYVoC34R3ZtgdUGS3njIt4B_hg=s1600)
+![Превью](https://lh3.googleusercontent.com/drive-viewer/AITFw-wpd5AokimckbInfEd7W8r_E3aGOVA-mQ_5px6n_Afab6AvBtnOk2mIgz1lcixsIwPnhIuRKPU4F9HZH6fGzGVoRuQKsg=s1600)
 
 -----
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)
 

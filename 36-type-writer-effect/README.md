@@ -37,11 +37,11 @@
 
 ---
 
-#### 🌄 Preview:
+#### 🌄 Превью:
 
 ![Preview](public/preview.gif)
 
 -----
 
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)
 

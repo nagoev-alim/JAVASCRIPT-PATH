@@ -43,10 +43,10 @@
 
 
 ---
-#### 🌄 Preview:
-![App Preview](https://lh3.googleusercontent.com/drive-viewer/AITFw-wnO2AZsqOJunHyEdcRjMLR-V_LE7OdIeollUaIp57--NjcwxysJFCUyhm2eYg1LJYqKNx0o2D-Jv8bMG4jHVZ386Qu=s1600)
+#### 🌄 Превью:
+![Превью](https://lh3.googleusercontent.com/drive-viewer/AITFw-wnO2AZsqOJunHyEdcRjMLR-V_LE7OdIeollUaIp57--NjcwxysJFCUyhm2eYg1LJYqKNx0o2D-Jv8bMG4jHVZ386Qu=s1600)
 
 
 -----
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)
 

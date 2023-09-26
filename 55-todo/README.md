@@ -85,12 +85,12 @@
 
 ---
 
-#### 🌄 Preview:
+#### 🌄 Превью:
 
-![App Preview](https://lh3.googleusercontent.com/drive-viewer/AITFw-z8j5G_8gzVVGlLsQ0mJu7ee82askX8nU-OgIGay2qI2oHCqvJiTvrptFKlftEso6PuaLLhFjizvkKvC9UM-dOg7LvBcw=s1600)
+![Превью](https://lh3.googleusercontent.com/drive-viewer/AITFw-z8j5G_8gzVVGlLsQ0mJu7ee82askX8nU-OgIGay2qI2oHCqvJiTvrptFKlftEso6PuaLLhFjizvkKvC9UM-dOg7LvBcw=s1600)
 
 
 -----
 
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)
 

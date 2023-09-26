@@ -16,10 +16,10 @@
 6. `showMessage(type, text)` - метод, который отображает сообщения для пользователя, такие как сообщения об ошибке, успешном угадывании числа и сообщения о поражении.
 
 ---
-#### 🌄 Preview:
-![App Preview](https://lh3.googleusercontent.com/drive-viewer/AITFw-wIKbRJMslT47NJa33QJJuiH8jTEbrLy4tOxALMC_GCzqibW782jMQ7WPkR4_oX4RzJVKlY_cCmdpaZZobN-VXpiv6iaA=s1600)
+#### 🌄 Превью:
+![Превью](https://lh3.googleusercontent.com/drive-viewer/AITFw-wIKbRJMslT47NJa33QJJuiH8jTEbrLy4tOxALMC_GCzqibW782jMQ7WPkR4_oX4RzJVKlY_cCmdpaZZobN-VXpiv6iaA=s1600)
 
 
 -----
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)
 

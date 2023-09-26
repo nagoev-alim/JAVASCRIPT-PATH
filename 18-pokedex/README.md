@@ -112,12 +112,12 @@ new Pokedex();
 
 ---
 
-#### 🌄 Preview:
+#### 🌄 Превью:
 
-![App Preview](https://lh3.googleusercontent.com/drive-viewer/AITFw-y42evBrfWx9OEDDc_4U7smOGEvrTkwH0KOZWHnYxZfuxGSZbbs2lNldbLIXJ7Y1F03Gt5Bzs16pj_5vgNQiMY2xjNAzw=s1600)
+![Превью](https://lh3.googleusercontent.com/drive-viewer/AITFw-y42evBrfWx9OEDDc_4U7smOGEvrTkwH0KOZWHnYxZfuxGSZbbs2lNldbLIXJ7Y1F03Gt5Bzs16pj_5vgNQiMY2xjNAzw=s1600)
 
 
 -----
 
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)
 

@@ -138,7 +138,7 @@ class QuoteGenerator {
         case 'https://api.themotivate365.com/stoic-quote': {
           const { data }: AxiosResponse<{
             quote: string;
-            author: string | null;
+            Автор: string | null;
           }> = await axios.get(source);
           const { quote, author } = data;
           this.renderData(quote, author ?? false);
@@ -218,7 +218,7 @@ class QuoteGenerator {
    * @param {boolean} hasAuthor - наличие автора цитаты
    * @private
    */
-  private renderData(text: string, hasAuthor: boolean): void {
+  private renderData(text: string, hasАвтор: boolean): void {
     if (this.target.classList.contains('hidden')) {
       this.target.classList.remove('hidden');
     }

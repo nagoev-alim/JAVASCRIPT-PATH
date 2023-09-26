@@ -23,12 +23,12 @@
 
 ---
 
-#### 🌄 Preview:
+#### 🌄 Превью:
 
-![App Preview](https://lh3.googleusercontent.com/drive-viewer/AITFw-xSWudiU-0y5WC8C0JwD1NKCFzKdI1PUlz4teVXduHlsAtjKrcykPDHlxHds40o6--nL3FXGh5KF7hDBiSigfSMjzLa=s1600)
+![Превью](https://lh3.googleusercontent.com/drive-viewer/AITFw-xSWudiU-0y5WC8C0JwD1NKCFzKdI1PUlz4teVXduHlsAtjKrcykPDHlxHds40o6--nL3FXGh5KF7hDBiSigfSMjzLa=s1600)
 
 
 -----
 
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)
 

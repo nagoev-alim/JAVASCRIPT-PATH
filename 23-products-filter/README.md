@@ -57,12 +57,12 @@ new ProductsFilter();
 
 ---
 
-#### 🌄 Preview:
+#### 🌄 Превью:
 
-![App Preview](https://lh3.googleusercontent.com/drive-viewer/AITFw-y0B8bwZ287IG0gHQy1x6xPl-kGVB1wVEOuSuRYgD09z26QJSOfXAA1wWP5TK5LRRIjNDqkL4P8Xo39O2yk77c0mrgz5g=s1600)
+![Превью](https://lh3.googleusercontent.com/drive-viewer/AITFw-y0B8bwZ287IG0gHQy1x6xPl-kGVB1wVEOuSuRYgD09z26QJSOfXAA1wWP5TK5LRRIjNDqkL4P8Xo39O2yk77c0mrgz5g=s1600)
 
 
 -----
 
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)
 

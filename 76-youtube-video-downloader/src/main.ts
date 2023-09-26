@@ -7,7 +7,7 @@ import axios, { AxiosResponse } from 'axios';
  * @interface
  */
 interface VideoData {
-  author: string;  // Автор видео
+  Автор: string;  // Автор видео
   link: string;    // Ссылка на видео
   status: string;  // Статус загрузки видео
   thumb: string;   // URL миниатюры видео

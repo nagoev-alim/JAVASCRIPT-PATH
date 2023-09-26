@@ -21,4 +21,4 @@ In this app you can create, votes, delete, filter interesting facts.
 
 -----
 
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)

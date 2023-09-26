@@ -39,10 +39,10 @@
 Таким образом, этот код создает веб-приложение, которое позволяет пользователю ввести текст или URL, выбрать размер QR-кода, сгенерировать QR-код и сохранить его на устройстве.
 
 ---
-#### 🌄 Preview:
-![App Preview](https://lh3.googleusercontent.com/drive-viewer/AITFw-wA4hbtOX-L8iNvXJt156eWgjaxPr22ehslY39InubwLP0SOuI8SLYrEMOi43G1BhgWAMUBGwgAwI0kg5y-MaHzdneplA=s1600)
+#### 🌄 Превью:
+![Превью](https://lh3.googleusercontent.com/drive-viewer/AITFw-wA4hbtOX-L8iNvXJt156eWgjaxPr22ehslY39InubwLP0SOuI8SLYrEMOi43G1BhgWAMUBGwgAwI0kg5y-MaHzdneplA=s1600)
 
 
 -----
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)
 

@@ -64,12 +64,12 @@ new RandomUserGenerator();
 ```
 ---
 
-#### 🌄 Preview:
+#### 🌄 Превью:
 
-![App Preview](https://lh3.googleusercontent.com/drive-viewer/AITFw-y07XyJSqUtOcLUW85asHM1a6QYfXYOsOioISaU4T8mC5a55brsivMbdNd5uJPCmAy0UYAf5vPafqhdynl8aqAdtj4q=s1600)
+![Превью](https://lh3.googleusercontent.com/drive-viewer/AITFw-y07XyJSqUtOcLUW85asHM1a6QYfXYOsOioISaU4T8mC5a55brsivMbdNd5uJPCmAy0UYAf5vPafqhdynl8aqAdtj4q=s1600)
 
 
 -----
 
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)
 

@@ -56,12 +56,12 @@
 
 
 ---
-#### 🌄 Preview:
-![App Preview](https://lh3.googleusercontent.com/drive-viewer/AITFw-znIgx0oAVVSz4zZ2NDgHZOD5soQGuEwJDxzjwG0dd8Oc8C9CtZ3gwu6Ymvwx-9Z2d0e6jdgvEOGMS4SDmTRGpkzKpr=s1600)
+#### 🌄 Превью:
+![Превью](https://lh3.googleusercontent.com/drive-viewer/AITFw-znIgx0oAVVSz4zZ2NDgHZOD5soQGuEwJDxzjwG0dd8Oc8C9CtZ3gwu6Ymvwx-9Z2d0e6jdgvEOGMS4SDmTRGpkzKpr=s1600)
 
-![App Preview](https://lh3.googleusercontent.com/drive-viewer/AITFw-ygH6Sz5nQbADy6wk9WaVyHCN6lWf6YGAgTh47x2mTM8Du1W4fBnrlgxwdwRE-kNKK73zdQcjqY_J3-yOZJhaXjp882LA=s1600)
+![Превью](https://lh3.googleusercontent.com/drive-viewer/AITFw-ygH6Sz5nQbADy6wk9WaVyHCN6lWf6YGAgTh47x2mTM8Du1W4fBnrlgxwdwRE-kNKK73zdQcjqY_J3-yOZJhaXjp882LA=s1600)
 
 
 -----
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)
 

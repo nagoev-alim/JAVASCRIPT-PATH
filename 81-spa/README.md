@@ -17,4 +17,4 @@ Simple single page application.
 - [Sass](https://sass-lang.com/)
 
 -----
-#### 🙌 Author: [@nagoev-alim](https://github.com/nagoev-alim)
+#### 🙌 Автор: [@nagoev-alim](https://github.com/nagoev-alim)
