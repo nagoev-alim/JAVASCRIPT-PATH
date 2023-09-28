@@ -1,28 +1,76 @@
 import './style.scss';
 import { toast } from './utils/toast.ts';
 
+/**
+ * Интерфейс, описывающий структуру данных формы.
+ * @interface
+ * @property {number} amount - Сумма займа.
+ * @property {number} interest - Процентная ставка.
+ * @property {number} repay - Срок погашения в годах.
+ */
 interface FormDataInputs {
   amount: number;
   interest: number;
   repay: number;
 }
 
+/**
+ * Класс для калькулятора займа.
+ * @class
+ */
 class LoanCalculator {
+  /**
+   * Элемент формы.
+   * @private
+   * @type {HTMLFormElement}
+   */
   private form: HTMLFormElement;
+  /**
+   * Элемент вывода результатов.
+   * @private
+   * @type {HTMLUListElement}
+   */
   private output: HTMLUListElement;
+  /**
+   * Элемент для отображения ежемесячного платежа.
+   * @private
+   * @type {HTMLSpanElement}
+   */
   private monthly: HTMLSpanElement;
+  /**
+   * Элемент для отображения суммы основного долга.
+   * @private
+   * @type {HTMLSpanElement}
+   */
   private principal: HTMLSpanElement;
+  /**
+   * Элемент для отображения суммы выплаченных процентов.
+   * @private
+   * @type {HTMLSpanElement}
+   */
   private interest: HTMLSpanElement;
 
+  /**
+   * Создает экземпляр класса LoanCalculator.
+   * @constructor
+   */
   constructor() {
     this.initialize();
   }
 
+  /**
+   * Инициализирует класс.
+   * @private
+   */
   private initialize(): void {
     this.createDOM();
     this.setupEventListeners();
   }
 
+  /**
+   * Создает DOM-структуру страницы.
+   * @private
+   */
   private createDOM(): void {
     const root = document.querySelector('#app') as HTMLDivElement;
     if (!root) return;
@@ -60,11 +108,20 @@ class LoanCalculator {
     this.interest = root.querySelector('[data-interest]')!;
   }
 
+  /**
+   * Устанавливает обработчики событий.
+   * @private
+   */
   private setupEventListeners(): void {
     this.form.addEventListener('submit', this.handleSubmit.bind(this));
   }
 
-  private handleSubmit(event: Event) {
+  /**
+   * Обработчик события отправки формы.
+   * @private
+   * @param {Event} event - Событие отправки формы.
+   */
+  private handleSubmit(event: Event): void {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -107,4 +164,5 @@ class LoanCalculator {
   }
 }
 
+// Создание экземпляра класса для запуска приложения.
 new LoanCalculator();
