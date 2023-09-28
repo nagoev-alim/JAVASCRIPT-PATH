@@ -73,7 +73,7 @@ class QuoteGenerator {
    * @param {Event} event - объект события
    * @private
    */
-  private handleSubmit(event: Event) {
+  private handleSubmit(event: Event): void {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -92,7 +92,7 @@ class QuoteGenerator {
    * @param {string} source - источник цитаты
    * @private
    */
-  private async getQuote(source: string) {
+  private async getQuote(source: string): Promise<void> {
     try {
       this.btnSubmit.innerHTML = `Loading...`;
 
@@ -218,7 +218,7 @@ class QuoteGenerator {
    * @param {boolean} hasAuthor - наличие автора цитаты
    * @private
    */
-  private renderData(text: string, hasАвтор: boolean): void {
+  private renderData(text: string, hasAuthor: boolean): void {
     if (this.target.classList.contains('hidden')) {
       this.target.classList.remove('hidden');
     }
@@ -238,9 +238,9 @@ class QuoteGenerator {
    * @param {Event} event - объект события
    * @private
    */
-  private handleClipboard(event: Event) {
+  private handleClipboard(event: Event): void {
     const target = event.target as HTMLButtonElement;
-    if (target.matches('[data-copy=""')) {
+    if (target.matches('[data-copy')) {
       const textarea = document.createElement('textarea');
       const text = this.target.querySelector('p')?.textContent;
       if (!text) return;
