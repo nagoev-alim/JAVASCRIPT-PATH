@@ -127,7 +127,7 @@ class Translator {
    * @returns {Promise<void>} - Промис, который выполняется при успешном переводе.
    * @private
    */
-  private async handleSubmit(event: MouseEvent) {
+  private async handleSubmit(event: MouseEvent): Promise<void> {
     const target = event.target as HTMLButtonElement;
     const textFrom = this.textareaFrom.value.trim();
     if (textFrom.length === 0) {
@@ -149,7 +149,7 @@ class Translator {
    * Обработчик события при нажатии на кнопку обмена языками.
    * @private
    */
-  private handleExchange() {
+  private handleExchange(): void {
     const tmpText = this.textareaFrom.value;
     const tmpSelect = this.selectFrom.value;
     this.textareaFrom.value = this.textareaTo.value;
@@ -163,7 +163,7 @@ class Translator {
    * @param {MouseEvent} event - Событие нажатия на кнопку копирования.
    * @private
    */
-  private handleCopy(event: MouseEvent) {
+  private handleCopy(event: MouseEvent): void {
     const target = event.target as HTMLButtonElement;
     navigator.clipboard.writeText(target.matches('[data-icon-from-copy=""]') ? this.textareaFrom.value : this.textareaTo.value);
     toast('Success copy to clipboard', 'success');
@@ -174,7 +174,7 @@ class Translator {
    * @param {MouseEvent} event - Событие нажатия на кнопку воспроизведения.
    * @private
    */
-  private handleSpeech(event: MouseEvent) {
+  private handleSpeech(event: MouseEvent): void {
     const target = event.target as HTMLButtonElement;
     const speechConfig = new SpeechSynthesisUtterance(target.matches('[data-icon-from-volume=""]') ? this.textareaFrom.value : this.textareaTo.value);
     speechConfig.lang = target.matches('[data-icon-from-volume=""]') ? this.selectFrom.value : this.selectTo.value;
