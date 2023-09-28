@@ -103,7 +103,7 @@ class ImageResizer {
    * Обрабатывает событие загрузки файла изображения.
    * @param {Event} event - Событие загрузки файла.
    */
-  private handleLoadFile(event: Event) {
+  private handleLoadFile(event: Event): void {
     const target = event.target as HTMLInputElement;
     const files = target.files;
     const file = files[0];
@@ -126,7 +126,7 @@ class ImageResizer {
   /**
    * Обрабатывает событие скачивания обработанного изображения.
    */
-  private handleDownload() {
+  private handleDownload(): void {
     this.btnDownload.textContent = 'Downloading...';
 
     const canvas = document.createElement('canvas');
@@ -152,7 +152,7 @@ class ImageResizer {
    * Обрабатывает событие нажатия клавиши при вводе ширины или высоты изображения.
    * @param {KeyboardEvent} event - Событие нажатия клавиши.
    */
-  private handleKeyUp(event: KeyboardEvent) {
+  private handleKeyUp(event: KeyboardEvent): void {
     const target = event.target as HTMLInputElement;
     if (target.matches('[data-width="')) {
       this.inputHeight.value = String(Math.floor(this.inputRatio.checked ? Number(this.inputWidth.value) / this.imageRatio : Number(this.inputHeight.value)));
