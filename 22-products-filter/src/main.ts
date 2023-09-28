@@ -109,7 +109,7 @@ class ProductsFilter {
    * @private
    * @param {Menu[]} items - Массив продуктов.
    */
-  private renderItems(items: Menu[]) {
+  private renderItems(items: Menu[]): string {
     return this.productsList.innerHTML = `
       ${items.map(({ id, title, price, img, desc }: Menu): string => `
         <li class='bg-white rounded border overflow-hidden' data-id='${id}'>
@@ -133,7 +133,7 @@ class ProductsFilter {
    * @private
    * @param {Event} event - Событие клика.
    */
-  private handleClick(event: Event) {
+  private handleClick(event: Event): void {
     const target = event.target as HTMLButtonElement;
     this.filtersList.querySelectorAll('button').forEach(btn => btn.classList.remove('bg-slate-300'));
 
