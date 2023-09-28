@@ -89,7 +89,7 @@ class MealFinder {
    * Обработчик события отправки формы.
    * @param event Событие отправки формы.
    */
-  private async handleSubmit(event: Event) {
+  private async handleSubmit(event: Event): Promise<void> {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -135,7 +135,7 @@ class MealFinder {
   /**
    * Обработчик события получения случайного блюда.
    */
-  private async handleGetRandom() {
+  private async handleGetRandom(): Promise<void> {
     try {
       this.content.classList.remove('hidden');
       this.content.classList.add('grid');
@@ -156,7 +156,7 @@ class MealFinder {
    * Отображает информацию о блюде.
    * @param entry Информация о блюде.
    */
-  private renderHTML(entry) {
+  private renderHTML(entry): void {
     const ingredients = [];
 
     for (let i = 1; i <= 20; i++) {
@@ -187,7 +187,7 @@ class MealFinder {
    * Обработчик щелчка по блюду в списке.
    * @param event Событие щелчка мыши.
    */
-  private async handleMealsClick(event: MouseEvent) {
+  private async handleMealsClick(event: MouseEvent): Promise<void> {
     const target = event.target as HTMLLIElement;
     if (target.matches('[data-id]')) {
       try {
