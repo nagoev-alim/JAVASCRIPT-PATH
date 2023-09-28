@@ -159,7 +159,7 @@ class RandomUserGenerator {
    * Загружает данные пользователя.
    * @private
    */
-  private async fetchData() {
+  private async fetchData(): Promise<void> {
     try {
       const { data: { results } } = await axios.get(this.URL);
       this.user = {
@@ -183,7 +183,7 @@ class RandomUserGenerator {
    * @private
    * @param {Event} event - Событие клика.
    */
-  private iconHandler(event: Event) {
+  private iconHandler(event: Event): void {
     const target = event.target as HTMLButtonElement;
     const label = (target.dataset as { label?: string })?.label ?? '';
     this.title.textContent = `My ${label} is`;
@@ -196,7 +196,7 @@ class RandomUserGenerator {
    * Отображает данные пользователя.
    * @private
    */
-  private renderData() {
+  private renderData(): void {
     this.image.src = this.user.image;
     this.title.textContent = `My ${this.icons[0].dataset.label} is`;
     this.value.textContent = this.user.name;
