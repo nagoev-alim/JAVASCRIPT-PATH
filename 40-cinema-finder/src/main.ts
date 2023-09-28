@@ -169,7 +169,7 @@ class Cinema {
    * @param {Event} event - Событие отправки формы.
    * @private
    */
-  private async handleSubmit(event: Event) {
+  private async handleSubmit(event: Event): Promise<void> {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -231,7 +231,7 @@ class Cinema {
    * @param {MouseEvent} event - Событие клика.
    * @private
    */
-  private handleModal(event: MouseEvent) {
+  private handleModal(event: MouseEvent): void {
     const target = event.target as HTMLButtonElement | HTMLDivElement;
     if ((target.matches('[data-close]') || target.matches('[data-overlay]'))) {
       this.overlay.classList.add('hidden');
@@ -259,7 +259,6 @@ class Cinema {
    * @param {KeyboardEvent} event - Событие нажатия клавиши.
    * @private
    */
-
   private handleKeyModal(event: KeyboardEvent): void {
     const key = event.key;
     if (key === 'Escape') {
