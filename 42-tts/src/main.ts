@@ -81,7 +81,7 @@ class TTS {
    * Получает и добавляет доступные голоса в выпадающий список.
    * @private
    */
-  private getVoices() {
+  private getVoices(): void {
     if (!this.synth) return;
     for (let { name, lang } of this.synth.getVoices()) {
       let option = `<option value='${name}' ${name === 'Google US English' ? 'selected' : ''}>${name} (${lang})</option>`;
@@ -94,7 +94,7 @@ class TTS {
    * @param {Event} event - Событие отправки формы.
    * @private
    */
-  private handleSubmit(event: Event) {
+  private handleSubmit(event: Event): void {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -144,7 +144,7 @@ class TTS {
    * @param {string} text - Текст для синтеза речи.
    * @private
    */
-  private textToSpeech(text: string) {
+  private textToSpeech(text: string): void {
     if (!this.synth) return;
     let utterance = new SpeechSynthesisUtterance(text);
     for (let voice of this.synth.getVoices()) {
