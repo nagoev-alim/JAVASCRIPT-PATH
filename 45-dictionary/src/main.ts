@@ -118,7 +118,7 @@ class Dictionary {
    * @param {string} event.target.value - Текст введенный пользователем.
    * @private
    */
-  private handleInput({ target: { value } }: { target: { value: string } }) {
+  private handleInput({ target: { value } }: { target: { value: string } }): void {
     this.formBtn.className = `${value.trim().length !== 0 ? 'absolute right-2 top-1/2 -translate-y-1/2' : 'hidden'}`;
   }
 
@@ -127,7 +127,7 @@ class Dictionary {
    * @param {Event} event - Событие отправки формы.
    * @private
    */
-  private handleSubmit(event: Event) {
+  private handleSubmit(event: Event): void {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -146,7 +146,7 @@ class Dictionary {
    * @param {string} term - Слово для поиска.
    * @private
    */
-  private async fetchData(term: string) {
+  private async fetchData(term: string): Promise<void> {
     try {
       this.info.innerHTML = `Searching the meaning of <span class='font-bold'>"${term}"</span>`;
       const { data } = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${term}`);
@@ -183,7 +183,7 @@ class Dictionary {
    * Сбрасывает состояние формы и очищает результаты поиска.
    * @private
    */
-  private handleReset() {
+  private handleReset(): void {
     this.form.reset();
     this.formInput.focus();
     this.formBtn.classList.add('hidden');
@@ -195,7 +195,7 @@ class Dictionary {
    * Воспроизводит звуковое произношение слова (если доступно).
    * @private
    */
-  private handleSpeech() {
+  private handleSpeech(): void {
     this.audio?.play();
   }
 
@@ -205,7 +205,7 @@ class Dictionary {
    * @param {HTMLDivElement} param.target - HTML-элемент синонима.
    * @private
    */
-  private handleSynonymsClick({ target }: { target: HTMLDivElement }) {
+  private handleSynonymsClick({ target }: { target: HTMLDivElement }): void {
     if (target.matches('[data-term]') && target.dataset.term !== undefined) {
       this.fetchData(target.dataset.term);
       this.formInput.value = target.dataset.term;
