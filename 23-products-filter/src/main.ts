@@ -128,12 +128,8 @@ class ProductsFilter {
   private renderProducts(): void {
     this.result.innerHTML = this.products.length === 0
       ? `<h5 class='font-medium'>😩 Sorry, no products matched your search</h5>`
-      : `<ul class='grid gap-3 sm:grid-cols-2 md:grid-cols-3' data-products>${this.products.map(({
-                                                                                                   id,
-                                                                                                   title,
-                                                                                                   image,
-                                                                                                   price,
-                                                                                                 }: IProduct): string => `
+      : `<ul class='grid gap-3 sm:grid-cols-2 md:grid-cols-3' data-products>
+          ${this.products.map(({ id, title, image, price }: IProduct): string => `
         <li class='bg-white border rounded overflow-hidden' data-id='${id}'>
           <div class=''>
             <img class='max-h-[250px] min-h-[250px] object-cover w-full' src='${image}' alt='${title}'>
@@ -163,7 +159,7 @@ class ProductsFilter {
    * Обработчик события клавиатурного ввода.
    * @param {Event} event - Событие клавиатурного ввода.
    */
-  private handleKeyUp(event: Event) {
+  private handleKeyUp(event: Event): void {
     const target = event.target as HTMLInputElement;
     this.companies.querySelectorAll('button').forEach(btn => btn.classList.add('bg-white'));
     this.products = mock.filter(({ title }) => title.toLowerCase().includes(target.value.toLowerCase()));
@@ -174,7 +170,7 @@ class ProductsFilter {
    * Обработчик события клика на кнопки фильтров по компаниям.
    * @param {Event} event - Событие клика.
    */
-  private handleFilter(event: Event) {
+  private handleFilter(event: Event): void {
     const target = event.target as HTMLButtonElement;
     if (target.dataset.filterBtn === '') {
       this.companies.querySelectorAll('button').forEach(btn => btn.classList.add('bg-white'));
@@ -189,7 +185,7 @@ class ProductsFilter {
   /**
    * Обработчик события очистки поля поиска.
    */
-  private handleSearch() {
+  private handleSearch(): void {
     this.products = mock;
     this.renderProducts();
   }
