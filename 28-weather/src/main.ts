@@ -90,6 +90,7 @@ interface WeatherData {
     country: string;
   };
 }
+
 /**
  * Класс для отображения информации о погоде и взаимодействия с ней.
  */
@@ -232,7 +233,7 @@ class Weather {
    * @param event - Событие отправки формы.
    * @private
    */
-  private async handleSubmit(event: Event) {
+  private async handleSubmit(event: Event): Promise<void> {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
