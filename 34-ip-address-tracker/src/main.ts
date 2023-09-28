@@ -142,7 +142,7 @@ class IPAddressTracker {
    * Отправляет запрос на сервер для получения данных об IP-адресе и обновляет интерфейс приложения.
    * @param {string} address - IP-адрес для запроса.
    */
-  fetchData = async (address: string) => {
+  private async fetchData(address: string): Promise<void> {
     try {
       const {
         data: {
@@ -171,7 +171,7 @@ class IPAddressTracker {
   /**
    * Добавляет смещение к карте для улучшенного отображения на маленьких экранах.
    */
-  private addOffset() {
+  private addOffset(): void {
     const offsetY = this.map.getSize().y * 0.15;
     this.map.panBy([0, -offsetY], { animate: false });
   };
@@ -179,7 +179,7 @@ class IPAddressTracker {
   /**
    * Настраивает параметры карты и отображает маркеры.
    */
-  mapConfig = () => {
+  private mapConfig(): void {
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(this.map);
     L.marker([51.505, -0.09], { icon: this.marker }).addTo(this.map);
   };
@@ -188,18 +188,15 @@ class IPAddressTracker {
    * Обрабатывает отправку формы, валидирует IP-адрес и обновляет данные.
    * @param {Event} event - Событие отправки формы.
    */
-  private handleSubmit(event: Event) {
+  private handleSubmit(event: Event): void {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
     const ip = formData.get('query') as string;
-
-
     if (!/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(ip)) {
       toast('You have entered an invalid IP address', 'warning');
       return;
     }
-
     this.storageSet(ip);
     this.fetchData(ip);
   }
