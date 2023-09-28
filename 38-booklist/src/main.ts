@@ -10,7 +10,7 @@ import axios from 'axios';
  */
 interface IBook {
   title: string; // Название книги
-  Автор: string; // Автор книги
+  author: string; // Автор книги
   isbn: string; // ISBN книги
   id: string; // Уникальный идентификатор книги
 }
@@ -162,7 +162,7 @@ class BookList {
    * @param {Event} event - Событие отправки формы.
    * @private
    */
-  private handleSubmit(event: Event) {
+  private handleSubmit(event: Event): void {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -255,7 +255,7 @@ class BookList {
    * @param {MouseEvent} event - Событие клика на кнопке удаления книги.
    * @private
    */
-  private handleDelete(event: MouseEvent) {
+  private handleDelete(event: MouseEvent): void {
     const target = event.target as HTMLButtonElement;
     if (target.matches('[data-id]') && confirm('Are you sure you want to delete it?')) {
       const id = target.dataset.id;
@@ -288,7 +288,7 @@ class BookList {
    * @param {MouseEvent} event - Событие клика на кнопке "Add" книги.
    * @private
    */
-  private handleAddBook(event: MouseEvent) {
+  private handleAddBook(event: MouseEvent): void {
     const target = event.target as HTMLButtonElement;
     if (target.matches('[data-isbn-id]')) {
       target.parentElement!.classList.add('added', 'opacity-25', 'pointer-events-none', 'cursor-allowed');
@@ -302,7 +302,7 @@ class BookList {
       } = this.booksISBN.filter(({ id }) => id === bookId)[0];
       const bookInfo = {
         title,
-        Автор: authors && authors.length !== 0 ? authors[0] : 'No info',
+        author: authors && authors.length !== 0 ? authors[0] : 'No info',
         isbn: industryIdentifiers[0].identifier,
         id: bookId,
       };
@@ -318,7 +318,7 @@ class BookList {
    * @returns {IBook[]} - Массив уникальных книг без дубликатов.
    * @private
    */
-  private getUniqueBooks(originalBooks) {
+  private getUniqueBooks(originalBooks): any[] {
     const uniqueBooksSet = new Set();
     const uniqueBooksMap = new Map();
 
