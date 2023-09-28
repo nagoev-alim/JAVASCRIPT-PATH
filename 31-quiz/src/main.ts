@@ -124,7 +124,7 @@ class Quiz {
    * Получает вопросы викторины из внешнего API.
    * @private
    */
-  private async fetchQuiz() {
+  private async fetchQuiz(): Promise<void> {
     try {
       // Отключает интерфейс викторины во время получения вопросов.
       this.quiz.classList.add('pointer-events-none');
@@ -150,7 +150,7 @@ class Quiz {
    * @param {IQuestion[]} data - Данные викторины.
    * @private
    */
-  private renderQuiz(data: IQuestion[]) {
+  private renderQuiz(data: IQuestion[]): void {
     // Обновляет счетчик вопросов и текст вопроса.
     this.questionCount.innerHTML = `Question ${this.currentQuestion + 1}/${data.length}`;
     this.questionLabel.textContent = decodeURIComponent(data[this.currentQuestion].question);
@@ -171,7 +171,7 @@ class Quiz {
    * Обрабатывает отправку пользовательского ответа на вопрос викторины.
    * @private
    */
-  private handleSubmit() {
+  private handleSubmit(): void {
     // Определяет выбранный пользователем ответ.
     let checkedAnswer = null;
     this.answerFields.forEach(field => {
