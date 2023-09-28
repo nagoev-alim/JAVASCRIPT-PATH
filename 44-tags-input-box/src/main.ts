@@ -107,7 +107,7 @@ class TagsInput {
    * Обновляет отображение оставшегося количества тегов.
    * @private
    */
-  private countTags() {
+  private countTags(): void {
     this.inputTag.focus();
     this.detailCount.innerText = String(this.maxTags - this.tags.length);
   }
@@ -116,7 +116,7 @@ class TagsInput {
    * Создает DOM-элементы для отображения добавленных тегов.
    * @private
    */
-  private createTag() {
+  private createTag(): void {
     this.tagsEl.querySelectorAll('[data-tag]').forEach(i => i.remove());
 
     this.tags.slice().forEach(tag => {
@@ -140,7 +140,7 @@ class TagsInput {
    * @private
    * @param {MouseEvent} event - Событие клика по кнопке удаления тега.
    */
-  private handleRemoveTag(event: MouseEvent) {
+  private handleRemoveTag(event: MouseEvent): void {
     const target = event.target as HTMLDivElement;
     const tag = target.closest('.flex')!.querySelector('span')!.textContent as string;
     let index = this.tags.indexOf(tag);
@@ -157,7 +157,7 @@ class TagsInput {
    * @param {HTMLInputElement} param.target - HTML-элемент ввода тега.
    * @param {string} param.key - Нажатая клавиша.
    */
-  private handleAddTag({ target, key }: { target: HTMLInputElement, key: string }) {
+  private handleAddTag({ target, key }: { target: HTMLInputElement, key: string }): void {
     if (key === 'Enter') {
       let tag = target.value.replace(/\s+/g, ' ');
       if (tag.length > 1 && !this.tags.includes(tag)) {
@@ -177,7 +177,7 @@ class TagsInput {
    * Обрабатывает событие удаления всех тегов.
    * @private
    */
-  private handleRemoveAll() {
+  private handleRemoveAll(): void {
     if (confirm('Are you sure you want to delete all the tags?')) {
       this.tags.length = 0;
       this.tagsEl.querySelectorAll('[data-tag]').forEach(tag => tag.remove());
