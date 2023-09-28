@@ -77,7 +77,7 @@ class Typewriter {
    * Осуществляет анимацию текста.
    * @private
    */
-  private typing() {
+  private typing(): void {
     const current = this.wordIndex % this.words.length;
     const fullTxt = this.words[current];
 
