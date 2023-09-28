@@ -90,7 +90,7 @@ class WikiSearch {
    * @param {Event} event - Событие отправки формы.
    * @private
    */
-  private async handleSubmit(event: Event) {
+  private async handleSubmit(event: Event): Promise<void> {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -121,7 +121,7 @@ class WikiSearch {
    * @param {IData[]} data - Массив данных с результатами поиска.
    * @private
    */
-  private renderData(data: IData[]) {
+  private renderData(data: IData[]): void {
     this.result.classList.remove('hidden');
     this.result.innerHTML = `
       ${data.map(({ title, snippet, pageid }) => `
