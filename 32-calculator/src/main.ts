@@ -117,7 +117,7 @@ class Calculator {
    * Обработчик события при нажатии на кнопки с числами.
    * @param {Event} event - Событие клика на кнопке.
    */
-  private setValues(event: Event) {
+  private setValues(event: Event): void {
     const target = event.target as HTMLButtonElement;
     const value = target.textContent;
     if (this.nextValue) {
@@ -135,7 +135,7 @@ class Calculator {
    * Обработчик события при нажатии на кнопки с операторами.
    * @param {Event} event - Событие клика на кнопке.
    */
-  private useOperator(event: Event) {
+  private useOperator(event: Event): void {
     const target = event.target as HTMLButtonElement;
     const operator = target.dataset.value;
     const currentValue = Number(this.result.textContent);
@@ -153,13 +153,13 @@ class Calculator {
     }
 
     this.nextValue = true;
-    this.operatorValue = operator?? '';
+    this.operatorValue = operator ?? '';
   }
 
   /**
    * Обработчик события при нажатии на кнопку для десятичной точки.
    */
-  private useDecimal() {
+  private useDecimal(): void {
     if (this.nextValue) return;
 
     if (!this.result.textContent.includes('.')) {
@@ -170,7 +170,7 @@ class Calculator {
   /**
    * Обработчик события при нажатии на кнопку "C" (очистка).
    */
-  private onReset() {
+  private onReset(): void {
     this.startedValue = 0;
     this.operatorValue = '';
     this.nextValue = false;
