@@ -122,7 +122,7 @@ class GithubUserProfile {
    * @param {Event} event - Событие отправки формы.
    * @private
    */
-  private async handleSubmit(event: Event) {
+  private async handleSubmit(event: Event): Promise<void> {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -160,7 +160,7 @@ class GithubUserProfile {
    * @param {UserData} data - Данные пользователя.
    * @private
    */
-  private renderUser(data: UserData) {
+  private renderUser(data: UserData): void {
     this.user.classList.remove('hidden');
     this.user.classList.add('grid');
     this.user.innerHTML = `
@@ -183,7 +183,7 @@ class GithubUserProfile {
    * @param {RepoData[]} data - Данные репозиториев.
    * @private
    */
-  private renderRepos(data: RepoData[]) {
+  private renderRepos(data: RepoData[]): void {
     this.repos.classList.remove('hidden');
     this.repos.classList.add('grid', 'gap-3');
     this.repos.innerHTML = data.length === 0 ? '' : `
