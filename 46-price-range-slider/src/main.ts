@@ -78,7 +78,7 @@ class PriceSlider {
    * @param {Event} event - Событие изменения значения ползунка.
    * @private
    */
-  private handleRange({ target: { dataset: { rangePrice } } }: { target: { dataset: { rangePrice: string } } }) {
+  private handleRange({ target: { dataset: { rangePrice } } }: { target: { dataset: { rangePrice: string } } }): void {
     const minVal = parseInt(this.inputRange[0].value);
     const maxVal = parseInt(this.inputRange[1].value);
 
@@ -101,7 +101,7 @@ class PriceSlider {
    * @param {Event} event - Событие изменения значений цен.
    * @private
    */
-  private handlePrice({ target: { dataset: { price } } }: { target: { dataset: { price: string } } }) {
+  private handlePrice({ target: { dataset: { price } } }: { target: { dataset: { price: string } } }): void {
     const minVal = parseInt(this.inputPrice[0].value);
     const maxVal = parseInt(this.inputPrice[1].value);
 
