@@ -8,7 +8,6 @@ import { toast } from './utils/toast.ts';
  * @property {string} text - Текст заметки.
  * @property {string} id - Уникальный идентификатор заметки.
  */
-
 interface Note {
   text: string;
   id: string;
@@ -78,7 +77,7 @@ class Notes {
    * Отображает сохраненные заметки в интерфейсе.
    * @private
    */
-  private storageDisplay() {
+  private storageDisplay(): void {
     const notes = this.storageGet();
     this.renderHTML(notes);
   }
@@ -87,7 +86,7 @@ class Notes {
    * Обработчик создания новой заметки.
    * @private
    */
-  private handleCreate() {
+  private handleCreate(): void {
     this.notes = [...this.notes, {
       text: '',
       id: uuidv4(),
