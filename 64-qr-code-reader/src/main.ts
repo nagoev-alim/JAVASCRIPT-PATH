@@ -151,7 +151,7 @@ class QRReader {
    * Обработчик события сброса состояния интерфейса.
    * @private
    */
-  private handleReset() {
+  private handleReset(): void {
     this.formImg.classList.add('hidden');
     this.formImg.src = '#';
     this.form.reset();
