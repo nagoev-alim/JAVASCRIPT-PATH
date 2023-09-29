@@ -140,7 +140,7 @@ class DrinkWaterTracker {
    * Сохраняет текущую конфигурацию потребления воды в локальное хранилище.
    * @private
    */
-  private storageAdd() {
+  private storageAdd(): void {
     localStorage.setItem('waterConfig', JSON.stringify(this.config));
   }
 
@@ -148,7 +148,7 @@ class DrinkWaterTracker {
    * Отображает данные о потреблении воды на основе сохраненной конфигурации.
    * @private
    */
-  private storageDisplay() {
+  private storageDisplay(): void {
     if (localStorage.getItem('waterConfig')) {
       this.goalLiters = this.config.goal;
       this.cupSize = this.config.size;
@@ -281,7 +281,7 @@ class DrinkWaterTracker {
    * Обрабатывает событие сброса данных о потреблении воды.
    * @private
    */
-  private handleReset() {
+  private handleReset(): void {
     localStorage.clear();
     location.reload();
   }
