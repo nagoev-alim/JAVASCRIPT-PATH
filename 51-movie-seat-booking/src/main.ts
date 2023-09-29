@@ -140,12 +140,10 @@ class Booking {
   /**
    * Обновляет информацию о выбранных местах и их стоимости.
    */
-  private updateSelected() {
+  private updateSelected(): void {
     const selectedSeats = document.querySelectorAll('.row .seat.selected');
     localStorage.setItem('seats', JSON.stringify([...selectedSeats].map(seat => [...this.seats].indexOf(seat))));
     this.count.innerText = selectedSeats.length.toString();
-    console.log(selectedSeats.length);
-    console.log(this.ticketPrice);
     this.total.innerText = (selectedSeats.length * this.ticketPrice).toString();
   }
 
