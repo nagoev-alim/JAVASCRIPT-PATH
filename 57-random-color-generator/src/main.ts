@@ -127,7 +127,7 @@ class ColorGenerator {
    * Обработчик события для копирования текущего цвета в буфер обмена.
    * @private
    */
-  private handleCopyColor() {
+  private handleCopyColor(): void {
     navigator.clipboard.writeText(this.current.innerText);
     toast('Success copy to clipboard', 'success');
   }
