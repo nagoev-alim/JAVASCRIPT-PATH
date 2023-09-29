@@ -99,7 +99,7 @@ class Todo {
    * Асинхронно загружает данные о задачах и пользователях с сервера.
    * @private
    */
-  private async fetchData() {
+  private async fetchData(): Promise<void> {
     try {
       const [todos, users] = await Promise.all([
         axios.get<ITodo[]>(`${this.URL}todos?_limit=15`),
@@ -121,7 +121,7 @@ class Todo {
    * @param {ITodo[] | IUser[] | ITodo} entries - Массив задач, массив пользователей или объект задачи.
    * @private
    */
-  private renderData(type: string, entries: ITodo[] | IUser[]) {
+  private renderData(type: string, entries: ITodo[] | IUser[]): void {
     switch (type) {
       case 'todos':
         this.list.innerHTML = `
@@ -180,7 +180,7 @@ class Todo {
    * @param {Event} event - Объект события.
    * @private
    */
-  private handleSubmit(event: Event) {
+  private handleSubmit(event: Event): void {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -195,7 +195,7 @@ class Todo {
    * @param {ITodo} entry - Новая задача.
    * @private
    */
-  private async createTodo(entry: ITodo) {
+  private async createTodo(entry: ITodo): Promise<void> {
     try {
       const response: AxiosResponse<{ id: number }> = await axios.post(`${this.URL}todos`, { ...entry });
       const createdTodo: ITodo = { ...entry, id: response.data.id };
@@ -211,7 +211,7 @@ class Todo {
    * @param {MouseEvent} event - Объект события мыши.
    * @private
    */
-  private async handleChange(event: MouseEvent) {
+  private async handleChange(event: MouseEvent): Promise<void> {
     const target = event.target as HTMLInputElement;
     const id = target.closest('li')!.dataset.id;
     const completed = target.checked;
@@ -228,7 +228,7 @@ class Todo {
    * @param {{ target: HTMLButtonElement }} param0 - Объект события и целевой элемент (кнопка).
    * @private
    */
-  private async handleDelete({ target }: { target: HTMLButtonElement }) {
+  private async handleDelete({ target }: { target: HTMLButtonElement }): Promise<void> {
     if (target.tagName === 'BUTTON' && confirm('Are you sure to delete?')) {
       const todoId = Number(target.dataset.delete);
       try {
