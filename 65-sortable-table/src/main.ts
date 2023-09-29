@@ -70,7 +70,7 @@ class SortableTable {
    * @param {Object} event - Событие клика.
    * @private
    */
-  private handleClick({ target }: { target: HTMLTableHeaderCellElement }) {
+  private handleClick({ target }: { target: HTMLTableHeaderCellElement }): void {
     const table = target.closest('table') as HTMLTableElement;
     const targetIndex = Array.from(target.parentElement!.children).indexOf(target);
     const currentIsAscending = target.classList.contains('asc');
