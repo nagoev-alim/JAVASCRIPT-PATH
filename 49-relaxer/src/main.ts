@@ -102,7 +102,7 @@ class Relaxer {
    * Выполняет анимацию дыхания.
    * @private
    */
-  private turnAnimation() {
+  private turnAnimation(): void {
     this.text.innerText = 'Breathe In!';
     this.container.className = 'relaxer-app__container grow';
 
