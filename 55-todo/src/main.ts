@@ -111,7 +111,7 @@ class Todo {
    * @param {HTMLButtonElement} param.target - Целевой элемент (кнопка удаления).
    * @private
    */
-  private handleDelete({ target }: { target: HTMLButtonElement }) {
+  private handleDelete({ target }: { target: HTMLButtonElement }): void {
     if (!target.matches('[data-id]')) return;
     const id = target.dataset.id;
     const label = this.todos.filter(todo => todo.id === id)[0].label;
@@ -128,8 +128,7 @@ class Todo {
    * @param {boolean} param.checked - Состояние задачи (выполнено/не выполнено).
    * @private
    */
-  private handleChange({ target: { dataset: { input: id }, checked } }) {
-    console.log(id, checked);
+  private handleChange({ target: { dataset: { input: id }, checked } }): void {
     this.todos = this.todos.map(todo => todo.id === id ? { ...todo, complete: checked } : todo);
     this.renderUI(this.todos);
   }
@@ -140,7 +139,7 @@ class Todo {
    * @param {HTMLSpanElement} param.target - Целевой элемент (название задачи для редактирования).
    * @private
    */
-  private handleUpdate({ target }: { target: HTMLSpanElement }) {
+  private handleUpdate({ target }: { target: HTMLSpanElement }): void {
     if (!target.matches('[data-label]')) return;
     const id = target.dataset.label;
     const currentLabel = this.todos.filter(todo => todo.id === id)[0].label;
@@ -169,7 +168,7 @@ class Todo {
    * @param {string} param.target.value - Текст для фильтрации задач.
    * @private
    */
-  private handleFilter({ target: { value } }: { target: { value: string } }) {
+  private handleFilter({ target: { value } }: { target: { value: string } }): void {
     return Array.from(this.list.children).forEach(todo =>
       todo.style.display = todo.querySelector('[data-label]')!.textContent!.toLowerCase().indexOf(value.trim().toLowerCase()) !== -1 ? 'flex' : 'none',
     );
@@ -179,7 +178,7 @@ class Todo {
    * Обработчик удаления всех выполненных задач.
    * @private
    */
-  private handleClear() {
+  private handleClear(): void {
     const count = this.todos.filter(({ complete }) => complete).length;
     if (count === 0) return;
     if (confirm(`Delete ${count} completed items?`)) {
@@ -193,7 +192,7 @@ class Todo {
    * @param {ITodo[]} entries - Массив задач для отображения.
    * @private
    */
-  private renderTodos(entries: ITodo[]) {
+  private renderTodos(entries: ITodo[]): void {
     document.querySelector('.content')!.className = `${entries.length === 0 ? 'content hidden' : 'content grid gap-3'}`;
     this.list.innerHTML = `
       ${entries.map(({ complete, label, id }) => `
@@ -216,7 +215,7 @@ class Todo {
    * Метод для рендера пользовательского интерфейса и сохранения задач в локальное хранилище.
    * @param {ITodo[]} entries - Массив задач для отображения и сохранения.
    */
-  renderUI = (entries: ITodo[]) => {
+  renderUI = (entries: ITodo[]): void => {
     this.storageAdd(entries);
     this.renderTodos(entries);
   };
@@ -225,7 +224,7 @@ class Todo {
    * Отображает задачи, полученные из локального хранилища.
    * @private
    */
-  private storageDisplay() {
+  private storageDisplay(): void {
     this.todos = this.storageGet();
     this.renderTodos(this.todos);
   }
@@ -245,7 +244,7 @@ class Todo {
    * @param {ITodo[]} entries - Массив объектов задач для сохранения.
    * @private
    */
-  private storageAdd(entries: ITodo[]) {
+  private storageAdd(entries: ITodo[]): void {
     return localStorage.setItem('todos', JSON.stringify(entries));
   };
 }
