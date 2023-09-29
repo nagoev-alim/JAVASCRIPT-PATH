@@ -173,7 +173,7 @@ class Notes {
    * Обрабатывает клики на элементах заметок (редактирование, удаление, развертывание).
    * @param {{ target: HTMLButtonElement }} params - Объект с параметрами события и целевым элементом.
    */
-  private handleClickNotes({ target }: { target: HTMLButtonElement }) {
+  private handleClickNotes({ target }: { target: HTMLButtonElement }): void {
     if (target.matches('[data-more]')) {
       target.nextElementSibling!.classList.toggle('hidden');
     }
@@ -201,7 +201,7 @@ class Notes {
    * Отображает заметки на странице.
    * @param {INote[]} notes - Массив объектов заметок для отображения.
    */
-  private renderHTML(notes: INote[]) {
+  private renderHTML(notes: INote[]): void {
     document.querySelectorAll('.item:not(.item--add)').forEach(note => note.remove());
 
     for (const { title, description, date, id } of notes) {
@@ -229,7 +229,7 @@ class Notes {
    * Добавляет заметки в локальное хранилище.
    * @param {INote[]} data - Массив объектов заметок для сохранения.
    */
-  private storageAdd(data: INote[]) {
+  private storageAdd(data: INote[]): void {
     return localStorage.setItem('notes', JSON.stringify(data));
   };
 }
