@@ -74,7 +74,7 @@ class PasswordStrengthCheck {
    * @param {HTMLInputElement} target - Элемент поля ввода пароля.
    * @private
    */
-  private inputHandler({ target }: { target: HTMLInputElement }) {
+  private inputHandler({ target }: { target: HTMLInputElement }): void {
     if (target.value.length === 0) {
       this.levels.classList.add('hidden');
       this.btnIco.classList.add('hidden');
@@ -91,7 +91,7 @@ class PasswordStrengthCheck {
    * @param {HTMLButtonElement} target - Элемент кнопки.
    * @private
    */
-  private togglePassword({ target }: { target: HTMLButtonElement }) {
+  private togglePassword({ target }: { target: HTMLButtonElement }): void {
     target.classList.toggle('toggle');
     target.innerHTML = target.classList.contains('toggle') ? feather.icons['eye-off'].toSvg() as string : feather.icons.eye.toSvg() as string;
     this.input.type = target.classList.contains('toggle') ? 'text' : 'password';
