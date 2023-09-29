@@ -73,7 +73,7 @@ class Calendar {
    * Рендерит календарь на основе текущего года и месяца.
    * @private
    */
-  private render():void {
+  private render(): void {
     let firstDayOfMonth = new Date(this.currYear, this.currMonth, 1).getDay();
     let lastDateOfMonth = new Date(this.currYear, this.currMonth + 1, 0).getDate();
     let lastDayOfMonth = new Date(this.currYear, this.currMonth, lastDateOfMonth).getDay();
@@ -101,7 +101,7 @@ class Calendar {
    * @param {MouseEvent} event - Событие клика.
    * @private
    */
-  private handleClick(event: MouseEvent) {
+  private handleClick(event: MouseEvent): void {
     const target = event.target as HTMLButtonElement;
     this.currMonth = target.dataset.control === 'prev' ? this.currMonth - 1 : this.currMonth + 1;
 
