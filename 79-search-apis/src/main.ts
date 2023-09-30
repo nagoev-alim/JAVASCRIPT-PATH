@@ -92,7 +92,7 @@ class SearchAPIs {
   /**
    * Загружает список категорий API с удаленного сервера.
    */
-  private async fetchCategories() {
+  private async fetchCategories(): Promise<void> {
     try {
       const response: AxiosResponse<APICategoryResponse> = await axios.get('https://api.publicapis.org/categories');
       const { count, categories } = response.data;
@@ -107,7 +107,7 @@ class SearchAPIs {
    * Обрабатывает отправку формы поиска и выполняет поиск API по введенным ключевым словам.
    * @param {Event} event - Событие отправки формы.
    */
-  private async handleSubmit(event: Event) {
+  private async handleSubmit(event: Event): Promise<void> {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -132,7 +132,7 @@ class SearchAPIs {
    * @param {number} count - Количество категорий.
    * @param {string[]} categories - Массив категорий.
    */
-  private renderCategories(count: number, categories: string[]) {
+  private renderCategories(count: number, categories: string[]): void {
     this.categoryCount.textContent = String(count);
     this.categoryList.innerHTML = ``;
 
@@ -154,7 +154,7 @@ class SearchAPIs {
    * Загружает API, соответствующие выбранной категории.
    * @param {string} category - Выбранная категория.
    */
-  private async fetchCategory(category: string) {
+  private async fetchCategory(category: string): Promise<void> {
     try {
       const { data: { entries } } = await axios.get(`https://api.publicapis.org/entries?category=${category}`);
       this.renderCards(entries);
@@ -168,7 +168,7 @@ class SearchAPIs {
    * Отображает найденные API на странице.
    * @param {APIEntry[]} entries - Массив объектов API.
    */
-  private renderCards(entries: APIEntry[]) {
+  private renderCards(entries: APIEntry[]): void {
     this.cards.parentElement!.classList.remove('hidden');
     this.cards.innerHTML = `
       ${entries.map((entry) => `
