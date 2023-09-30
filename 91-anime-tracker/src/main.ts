@@ -16,6 +16,7 @@ interface AnimeStored {
   episodes: number;
   episodesFinish: number;
 }
+
 /**
  * @file Основной класс AnimeTracker, отвечающий за отслеживание и управление списком аниме.
  * @class
@@ -26,6 +27,7 @@ class AnimeTracker {
   private form: HTMLFormElement;
   private searchList: HTMLUListElement;
   private storedList: HTMLUListElement;
+
   /**
    * Создает экземпляр класса AnimeTracker.
    * @constructor
@@ -39,7 +41,7 @@ class AnimeTracker {
    * Создает DOM-элементы, устанавливает слушатели событий.
    * @private
    */
-  private initialize():void {
+  private initialize(): void {
     this.createDOM();
     this.setupEventListeners();
   }
@@ -69,6 +71,7 @@ class AnimeTracker {
     this.searchList = root.querySelector('[data-search]')!;
     this.storedList = root.querySelector('[data-stored]')!;
   }
+
   /**
    * Устанавливает слушатели событий для формы и списков.
    * @private
@@ -80,6 +83,7 @@ class AnimeTracker {
     this.searchList.addEventListener('click', this.handleSearchClick.bind(this));
     this.storedList.addEventListener('click', this.handleStoredClick.bind(this));
   }
+
   /**
    * Получает данные из локального хранилища.
    * @returns {AnimeStored[]} Массив объектов, представляющих хранящиеся аниме.
@@ -89,11 +93,12 @@ class AnimeTracker {
     const entries = localStorage.getItem('anime');
     return entries ? JSON.parse(entries) : [];
   }
+
   /**
    * Отображает данные из локального хранилища.
    * @private
    */
-  private storageDisplay():void {
+  private storageDisplay(): void {
     const storedList = this.storageGet();
     if (storedList.length === 0) {
       this.storedList.classList.add('hidden');
@@ -102,12 +107,13 @@ class AnimeTracker {
     this.storedList.classList.remove('hidden');
     this.renderStore(storedList);
   }
+
   /**
    * Отображает список хранимых аниме.
    * @param {AnimeStored[]} data - Массив объектов, представляющих хранящиеся аниме.
    * @private
    */
-  private renderStore(data: AnimeStored[]):void {
+  private renderStore(data: AnimeStored[]): void {
     this.storedList.innerHTML = '';
     for (const { img, title, id, episodes, episodesFinish } of data) {
       const li = document.createElement('li');
@@ -131,6 +137,7 @@ class AnimeTracker {
       this.storedList.append(li);
     }
   }
+
   /**
    * Обрабатывает отправку формы поиска аниме.
    * @param {Event} event - Событие отправки формы.
@@ -147,6 +154,7 @@ class AnimeTracker {
     }
     this.fetchAnime(query);
   }
+
   /**
    * Осуществляет поиск аниме по запросу.
    * @param {string} query - Запрос для поиска аниме.
@@ -172,6 +180,7 @@ class AnimeTracker {
       console.log(e);
     }
   }
+
   /**
    * Отображает результаты поиска аниме.
    * @param {AnimeResult[]} data - Массив объектов, представляющих результаты поиска.
@@ -201,6 +210,7 @@ class AnimeTracker {
       this.searchList.appendChild(li);
     }
   }
+
   /**
    * Обрабатывает клик по элементам результатов поиска аниме.
    * @param {Event} event - Событие клика.
@@ -216,6 +226,7 @@ class AnimeTracker {
       this.renderStore(this.storedResults);
     }
   }
+
   /**
    * Устанавливает данные об аниме в список хранящихся аниме.
    * @param {Object} data - Данные об аниме.
@@ -224,6 +235,7 @@ class AnimeTracker {
   private storageSet(data): void {
     return localStorage.setItem('anime', JSON.stringify(data));
   }
+
   /**
    * Обрабатывает клик по элементам хранящихся аниме.
    * @param {Event} event - Событие клика.
@@ -282,5 +294,6 @@ class AnimeTracker {
     }
   }
 }
+
 // Создание экземпляра класса AnimeTracker.
 new AnimeTracker();
