@@ -206,7 +206,7 @@ class Dice {
   /**
    * Инициализирует начало новой игры.
    */
-  private initGame() {
+  private initGame(): void {
     this.scores = [0, 0];
     this.currentScore = 0;
     this.activePlayer = 0;
@@ -225,7 +225,7 @@ class Dice {
   /**
    * Обрабатывает бросок кубика.
    */
-  private handleRoll() {
+  private handleRoll(): void {
     if (this.playing) {
       const dice = getRandomNumber(1, 6);
       this.diceImg.classList.remove('hidden');
@@ -243,7 +243,7 @@ class Dice {
   /**
    * Обрабатывает удержание текущего счета.
    */
-  private handleHold() {
+  private handleHold(): void {
     if (this.playing) {
       if (this.currentScore !== null && this.scores !== null && this.activePlayer !== null) {
         this.scores[this.activePlayer] += this.currentScore;
@@ -264,14 +264,14 @@ class Dice {
   /**
    * Показывает или скрывает информацию о правилах игры.
    */
-  private handleInfo() {
+  private handleInfo(): void {
     document.querySelector('.overlay')!.classList.toggle('visible');
   }
 
   /**
    * Переключает активного игрока и сбрасывает текущий счет.
    */
-  private handleSwitchPlayer() {
+  private handleSwitchPlayer(): void {
     if (this.currentScore !== null) {
       document.querySelector(`[data-current-${this.activePlayer}]`).textContent = 0;
       this.currentScore = 0;
