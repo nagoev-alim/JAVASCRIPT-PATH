@@ -89,7 +89,7 @@ class WordScramble {
    * @param {number} time - Время в секундах.
    * @private
    */
-  private initTimer(time: number) {
+  private initTimer(time: number): void {
     this.timer = setInterval(() => {
       if (time > 0) {
         time--;
@@ -106,7 +106,7 @@ class WordScramble {
    * Инициализирует игру, выбирая случайное слово и подготавливая его для отображения.
    * @private
    */
-  private initGame() {
+  private initGame(): void {
     this.initTimer(30);
     const { word, hint } = this.words[Math.floor(Math.random() * this.words.length)];
     console.log({ word });
@@ -130,7 +130,7 @@ class WordScramble {
    * Проверяет введенное пользователем слово.
    * @private
    */
-  private checkWord() {
+  private checkWord(): void {
     let word = this.input.value.toLowerCase();
     if (!word) {
       toast('Please enter the word to check!', 'error');
