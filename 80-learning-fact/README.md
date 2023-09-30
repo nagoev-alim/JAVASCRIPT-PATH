@@ -1,6 +1,7 @@
-## 📦 Learning Fact App
+## 📦 Приложение - Учим факты
 
-In this app you can create, votes, delete, filter interesting facts.
+### 🚀 Обзор
+В этом приложении можно создавать, голосовать, удалять, фильтровать интересные факты.
 
 
 ---
@@ -8,16 +9,6 @@ In this app you can create, votes, delete, filter interesting facts.
 #### 🌄 Screenshots:
 
 ![App Screenshot](assets/images/preview.jpg)
-
------
-
-#### 💻 Stack:
-
-- [JavaScript](https://learn.javascript.ru/)
-- [Sass](https://sass-lang.com/)
-
-#### 💻 API:
-- [Supabase](https://supabase.com/)
 
 -----
 
