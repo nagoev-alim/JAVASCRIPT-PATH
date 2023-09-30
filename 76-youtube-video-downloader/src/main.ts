@@ -7,7 +7,7 @@ import axios, { AxiosResponse } from 'axios';
  * @interface
  */
 interface VideoData {
-  Автор: string;  // Автор видео
+  author: string;  // Автор видео
   link: string;    // Ссылка на видео
   status: string;  // Статус загрузки видео
   thumb: string;   // URL миниатюры видео
@@ -139,7 +139,7 @@ class YoutubeToMp3Converter {
    * Восстанавливает начальное состояние компонента.
    * @private
    */
-  private setDefault() {
+  private setDefault(): void {
     document.querySelector('.result')!.classList.remove('hidden');
     this.form.querySelector('button')!.textContent = 'Submit';
   }
