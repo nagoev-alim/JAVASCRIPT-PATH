@@ -144,7 +144,7 @@ class Hangman {
    * Отображает скрытое слово и его подсказку.
    * @private
    */
-  private displayWord() {
+  private displayWord(): void {
     console.log(`Hint:${this.selectedWord.word}`);
 
     this.hint.innerHTML = `<h3 class='font-bold'>🚀 Hint:</h3> ${this.selectedWord.hint}`;
@@ -164,7 +164,7 @@ class Hangman {
    * @param {Object} event - Объект события нажатия клавиши.
    * @private
    */
-  private handleKeyDown(event: KeyboardEvent) {
+  private handleKeyDown(event: KeyboardEvent): void {
     const { keyCode, key } = event;
 
     if (keyCode >= 65 && keyCode <= 90) {
@@ -191,7 +191,7 @@ class Hangman {
    * Обновляет отображение неправильных букв и фигуры.
    * @private
    */
-  private updateLetters() {
+  private updateLetters(): void {
     if (this.wrongLetters.length > 0) {
       document.querySelector('.wrong-letters p')!.classList.remove('hidden');
     }
