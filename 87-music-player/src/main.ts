@@ -153,7 +153,7 @@ class MusicPlayer {
   /**
    * Инициализирует приложение и начинает воспроизведение музыки.
    */
-  private initApp() {
+  private initApp():void {
     this.renderMusics();
     this.loadMusic(this.musicIndex);
     this.playingSong();
@@ -162,7 +162,7 @@ class MusicPlayer {
   /**
    * Рендерит список музыки.
    */
-  private renderMusics() {
+  private renderMusics():void {
     for (const [index, value] of mock.entries()) {
       const li = document.createElement('li');
       li.setAttribute('data-index', index + 1);
