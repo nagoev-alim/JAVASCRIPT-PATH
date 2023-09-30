@@ -2,6 +2,7 @@ import './style.scss';
 import mock from '../src/mock/index';
 import axios from 'axios';
 import { toast } from './utils/toast.ts';
+
 /**
  * @interface IData
  * @description Интерфейс, представляющий структуру данных для отображения информации на странице.
@@ -21,6 +22,7 @@ const data: IData[] = [
   { label: 'WPM', value: 0, data: 'wpm' },
   { label: 'CPM', value: 0, data: 'cpm' },
 ];
+
 /**
  * @class TypingSpeed
  * @description Класс TypingSpeed представляет тест на скорость печати и управляет его функциональностью.
@@ -41,6 +43,7 @@ class TypingSpeed {
   private optionMistake: HTMLSpanElement;
   private optionWpm: HTMLSpanElement;
   private optionCpm: HTMLSpanElement;
+
   /**
    * @constructor
    * @description Конструктор класса TypingSpeed. Вызывает метод initialize() для инициализации компонентов.
@@ -110,7 +113,7 @@ class TypingSpeed {
    * @method init
    * @description Инициализирует тест, загружая текст для набора и настраивая начальные значения.
    */
-  private async init() {
+  private async init(): Promise<void> {
     try {
       this.typing.innerHTML = '<h4>Loading...</h4>';
       const {
@@ -136,7 +139,7 @@ class TypingSpeed {
    * @param {string} value - Введенный пользователем текст.
    * @description Обрабатывает ввод пользователя и отслеживает показатели.
    */
-  private handleInput({ target: { value } }: { target: { value: string } }) {
+  private handleInput({ target: { value } }: { target: { value: string } }): void {
     const characters = this.typing.querySelectorAll('span');
     const typedChar = value.split('')[this.charIndex];
 
@@ -174,12 +177,13 @@ class TypingSpeed {
       this.inputTyping.value = '';
     }
   }
+
   /**
    * @private
    * @method handleReset
    * @description Сбрасывает тест к начальным значениям.
    */
-  private handleReset() {
+  private handleReset(): void {
     this.init();
     clearInterval(this.timer);
     this.timeLeft = this.maxTime;
@@ -188,12 +192,13 @@ class TypingSpeed {
     this.optionTime.innerText = String(this.timeLeft);
     this.optionWpm.innerText = String(this.optionMistake.innerText = String(this.optionCpm.innerText = String(0)));
   }
+
   /**
    * @private
    * @method initialTimer
    * @description Обратный отсчет времени для теста и обновление показателей WPM.
    */
-  private initialTimer() {
+  private initialTimer(): void {
     if (this.timeLeft > 0) {
       this.timeLeft--;
       this.optionTime.innerText = String(this.timeLeft);
