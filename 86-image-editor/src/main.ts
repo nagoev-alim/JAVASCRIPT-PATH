@@ -236,7 +236,7 @@ class ImageEditor {
    * Обрабатывает изменение выбранного файла изображения.
    * @param {Object} event - Событие изменения файла в input.
    */
-  private handleFileChange({ target: { files } }: { target: { files: FileList } }) {
+  private handleFileChange({ target: { files } }: { target: { files: FileList } }): void {
     let file = files[0];
     if (!file) {
       return;
