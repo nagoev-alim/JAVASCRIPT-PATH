@@ -96,7 +96,7 @@ class Picker {
    * Обрабатывает отправку формы и анализирует выбранный цвет.
    * @private
    */
-  private async handleSubmit() {
+  private async handleSubmit(): Promise<void> {
     this.result.classList.remove('open');
     this.submitBtn.textContent = 'Loading...';
 
