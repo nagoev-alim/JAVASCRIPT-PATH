@@ -33,6 +33,7 @@ const mock: {
     value: 1,
   },
 ];
+
 /**
  * Класс StarRatings02 - компонент для отображения рейтингов.
  */
@@ -73,6 +74,7 @@ export class StarRatings02 {
     `;
     root.append(div);
   }
+
   /**
    * Устанавливает обработчики событий.
    */
@@ -80,10 +82,11 @@ export class StarRatings02 {
     new starRatingEsm('[data-lib-rating]');
     this.customRating();
   }
+
   /**
    * Оценка рейтинга пользовательским способом.
    */
-  private customRating() {
+  private customRating(): void {
     const ratingStars = [...document.querySelectorAll('.rating02 [data-star]')];
     const ratingResult = document.querySelector('.rating02 [data-result]');
 
