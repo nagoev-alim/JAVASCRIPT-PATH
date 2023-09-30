@@ -107,7 +107,7 @@ class MemoryGame01 {
    * @private
    * Метод перемешивает карточки и сбрасывает состояние игры.
    */
-  private shuffle() {
+  private shuffle(): void {
     this.matched = 0;
     this.disableDeck = false;
     this.cardOne = this.cardTwo = '';
@@ -143,7 +143,7 @@ class MemoryGame01 {
    * @param {string} img1 - Ссылка на изображение первой карточки.
    * @param {string} img2 - Ссылка на изображение второй карточки.
    */
-  private matchCards(img1: string, img2: string) {
+  private matchCards(img1: string, img2: string): false | undefined {
     if (img1 === img2) {
       this.matched++;
       if (this.matched === 8) {
@@ -343,7 +343,7 @@ class MemoryGame02 {
    * @private
    * Метод перемешивает карточки и сбрасывает состояние игры.
    */
-  private shuffle() {
+  private shuffle(): void {
     this.timeLeft = this.maxTime;
     this.flips = this.matchedCard = 0;
     this.cardOne = this.cardTwo = '';
@@ -392,7 +392,7 @@ class MemoryGame02 {
    * @param {string} img1 - Ссылка на изображение первой карточки.
    * @param {string} img2 - Ссылка на изображение второй карточки.
    */
-  private matchCards(img1: string, img2: string) {
+  private matchCards(img1: string, img2: string): false | void {
     if (img1 === img2) {
       this.matchedCard++;
       if (this.matchedCard === 6 && this.timeLeft > 0) {
@@ -419,7 +419,7 @@ class MemoryGame02 {
    * @private
    * Метод инициализирует таймер обратного отсчета.
    */
-  private initTimer() {
+  private initTimer(): void {
     if (this.timeLeft <= 0) {
       return clearInterval(this.timer);
     }
