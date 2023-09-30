@@ -91,7 +91,7 @@ export class ReviewSlider {
   /**
    * Инициализирует слайдер, загружая отзывы с сервера.
    */
-  private async initSlider() {
+  private async initSlider(): Promise<void> {
     try {
       const { data } = await axios.get(this.URL);
       if (data.length === 0) {
@@ -120,7 +120,7 @@ export class ReviewSlider {
    * Обрабатывает движение слайдера.
    * @param {object} event - Событие клика на кнопке навигации.
    */
-  private moveSlider({ target: { dataset: { nav } } }: { target: { dataset: { nav: string } } }) {
+  private moveSlider({ target: { dataset: { nav } } }: { target: { dataset: { nav: string } } }): void {
     switch (nav) {
       case 'next':
         this.slideIndex === this.reviews?.length - 1 ? this.slideIndex = 0 : this.slideIndex++;

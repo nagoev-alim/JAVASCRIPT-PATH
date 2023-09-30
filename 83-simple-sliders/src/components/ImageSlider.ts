@@ -80,7 +80,7 @@ export class ImageSlider {
   /**
    * Инициализирует слайдер, создавая DOM-структуру слайдов и отображая их.
    */
-  private async initSlider() {
+  private async initSlider(): Promise<void> {
     const data = Array.from({ length: 6 }, (v, i) => i + 1);
     data.push(data[0]);
     data.unshift(data[data.length - 2]);
