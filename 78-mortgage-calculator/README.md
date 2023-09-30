@@ -1,10 +1,10 @@
-## 📦 Mortgage Calculator App
+## 📦 Приложение - Ипотечный калькулятор
 
-In this app you can calculate your mortgage.
+В этом приложении вы можете рассчитать ипотечный кредит.
 
-**As a side note:**
+**Примечание:**
 
-To send messages you must use a local server (e.g. Open Server, MAMP PRO)
+Для отправки сообщений необходимо использовать локальный сервер (например, Open Server, MAMP PRO)
 
 ---
 
@@ -15,12 +15,7 @@ To send messages you must use a local server (e.g. Open Server, MAMP PRO)
 ![App Screenshot](assets/images/preview03.jpg)
 ![App Screenshot](assets/images/preview04.jpg)
 
------
 
-#### 💻 Stack:
-
-- [JavaScript](https://learn.javascript.ru/)
-- [Sass](https://sass-lang.com/)
 
 -----
 

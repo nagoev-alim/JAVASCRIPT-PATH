@@ -6,7 +6,7 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <link rel='stylesheet' href='libs/noUiSlider/nouislider.min.css'>
   <link rel='stylesheet' href='assets/css/style.css'>
-  <title>Онлайн калькулятор</title>
+  <title>Приложение: Ипотечный калькулятор</title>
 </head>
 <body>
 <div id='app'>
