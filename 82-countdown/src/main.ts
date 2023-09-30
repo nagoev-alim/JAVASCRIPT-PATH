@@ -111,7 +111,7 @@ class Countdown {
   /**
    * Отображает сохраненное значение счетчика, если оно было сохранено ранее.
    */
-  private storageDisplay() {
+  private storageDisplay(): void {
     const data = this.storageGet();
     if (data !== null) {
       this.countdownName = data.name;
@@ -128,7 +128,7 @@ class Countdown {
    * Обрабатывает отправку формы для установки нового значения счетчика.
    * @param {Event} event - Событие отправки формы.
    */
-  private handleSubmit(event: Event) {
+  private handleSubmit(event: Event): void {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -173,7 +173,7 @@ class Countdown {
   /**
    * Обновляет значение счетчика и отображает обратный отсчет.
    */
-  private updateCountdown() {
+  private updateCountdown(): void {
     setTimeout(() => {
       if (typeof this.countdownName === 'string') {
         this.title.innerHTML = this.countdownName;
